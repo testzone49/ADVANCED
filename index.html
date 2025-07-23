@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>JAA Day 6 – Intermediate Level</title>
+  <title>JAA Practice Test - Set 2</title>
   <style>
     body { font-family: sans-serif; padding: 20px; background: #f1f5f9; }
     .question-block {
@@ -16,6 +16,7 @@
       padding: 10px 25px; font-size: 16px;
       background: #007bff; color: white;
       border: none; border-radius: 5px;
+      cursor: pointer;
     }
     #result {
       margin-top: 20px; font-weight: bold; font-size: 18px;
@@ -23,50 +24,53 @@
   </style>
 </head>
 <body>
-<h2>JAA Day 6 – Intermediate Practice Test (25 Questions)</h2>
+<h2>JAA Practice Test - Set 2 (25 Questions)</h2>
+<p>तुमच्या आजच्या सरावासाठी २५ प्रश्न. (25 questions for your practice today.)</p>
 <form id='quizForm'></form>
 <button id="submitBtn">Submit</button>
 <div id="result"></div>
 <script>
+// प्रश्न आणि उत्तरांचा संच
 const questions = [
 // Language
-["Choose the sentence that is grammatically correct. (व्याकरणाच्या दृष्टीने योग्य असलेले वाक्य निवडा.)", ["A) He don't like coffee. (तो कॉफी पसंत करत नाही.)", "B) She sings beautiful. (ती सुंदर गाते.)", "C) They were going to the market. (ते बाजारात जात होते.)", "D) I has a car. (माझ्याकडे एक गाडी आहे.)"], "C"],
-["What does the idiom 'Bite the bullet' mean? ('बाइट द बुलेट' या वाक्प्रचाराचा अर्थ काय आहे?)", ["A) To eat something quickly. (घाईघाईने काहीतरी खाणे.)", "B) To face a difficult situation with courage. (कठीण परिस्थितीला धैर्याने सामोरे जाणे.)", "C) To complain loudly. (मोठ्याने तक्रार करणे.)", "D) To give up easily. (सहजपणे हार मानणे.)"], "B"],
-["Find the synonym of 'Diligent'. ('डिलिजंट' या शब्दाचा समानार्थी शब्द शोधा.)", ["A) Lazy (आळशी)", "B) Hard-working (कष्टाळू)", "C) Careless (निष्काळजी)", "D) Slow (हळू)"], "B"],
-["Find the antonym of 'Transparent'. ('ट्रान्सपरंट' या शब्दाचा विरुद्धार्थी शब्द शोधा.)", ["A) Clear (स्पष्ट)", "B) Opaque (अपारदर्शक)", "C) Visible (दृश्यमान)", "D) Lucid (सुस्पष्ट)"], "B"],
-["The train was running ______ schedule. (ट्रेन वेळापत्रकानुसार ______ धावत होती.)", ["A) on (वर)", "B) at (येथे)", "C) in (मध्ये)", "D) to (कडे)"], "A"],
+["Choose the correct preposition: She is afraid ___ spiders. (योग्य शब्दयोगी अव्यय निवडा: ती कोळ्यांना ___ घाबरते.)", ["A) of", "B) from", "C) with", "D) about"], "A"],
+["What is the meaning of the idiom 'To hit the nail on the head'? ('To hit the nail on the head' या वाक्प्रचाराचा अर्थ काय आहे?)", ["A) To work hard (खूप मेहनत करणे)", "B) To describe exactly what is causing a situation or problem (समस्येचे किंवा परिस्थितीचे अचूक वर्णन करणे)", "C) To make a loud noise (मोठा आवाज करणे)", "D) To finish a task quickly (काम लवकर संपवणे)"], "B"],
+["Find the synonym for 'Abundant'. ('Abundant' या शब्दाचा समानार्थी शब्द शोधा.)", ["A) Scarce (दुर्मिळ)", "B) Plentiful (विपुल)", "C) Limited (मर्यादित)", "D) Rare (क्वचित)"], "B"],
+["Which of the following sentences is in the past perfect tense? (खालीलपैकी कोणते वाक्य पूर्ण भूतकाळात आहे?)", ["A) I am writing a letter. (मी पत्र लिहित आहे.)", "B) He had finished his work before I arrived. (मी पोहोचण्यापूर्वी त्याने त्याचे काम पूर्ण केले होते.)", "C) They will play cricket tomorrow. (ते उद्या क्रिकेट खेळतील.)", "D) She eats an apple. (ती सफरचंद खाते.)"], "B"],
+["Identify the correct spelling. (योग्य स्पेलिंग ओळखा.)", ["A) Acomodation", "B) Accomodation", "C) Acommodation", "D) Accommodation"], "D"],
 
 // Mathematics
-["What is the next term in the series: 3, 7, 13, 21, ? (मालिका 3, 7, 13, 21, ? मधील पुढील पद काय आहे?)", ["A) 29", "B) 31", "C) 33", "D) 27"], "B"],
-["If 2x + 5 = 15, then what is the value of x? (जर 2x + 5 = 15, तर x ची किंमत काय आहे?)", ["A) 5", "B) 10", "C) 2.5", "D) 7.5"], "A"],
-["An angle that measures exactly 90 degrees is called a/an ______ angle. (जो कोन नेमका 90 अंशांचा असतो, त्याला ______ कोन म्हणतात.)", ["A) Acute (लघुकोन)", "B) Obtuse (विशालकोन)", "C) Right (काटकोन)", "D) Straight (सरळ कोन)"], "C"],
-["If 40% of a number is 20, what is the number? (एका संख्येच्या 40% हे 20 असल्यास, ती संख्या कोणती?)", ["A) 40", "B) 50", "C) 80", "D) 100"], "B"],
-["What is the average of 10, 20, and 30? (10, 20 आणि 30 ची सरासरी किती आहे?)", ["A) 15", "B) 20", "C) 25", "D) 60"], "B"],
+["A shopkeeper sells a book for Rs. 220 and makes a profit of 10%. What was the cost price of the book? (एक दुकानदार एक पुस्तक २२० रुपयांना विकतो आणि १०% नफा कमावतो. तर त्या पुस्तकाची खरेदी किंमत किती होती?)", ["A) Rs. 180", "B) Rs. 200", "C) Rs. 210", "D) Rs. 240"], "B"],
+["The sum of the angles in a triangle is always: (त्रिकोणाच्या कोनांची बेरीज नेहमी असते:)", ["A) 90 degrees (९० अंश)", "B) 180 degrees (१८० अंश)", "C) 270 degrees (२७० अंश)", "D) 360 degrees (३६० अंश)"], "B"],
+["If the radius of a circle is 7 cm, what is its circumference? (Use π = 22/7) (जर वर्तुळाची त्रिज्या ७ सेमी असेल, तर त्याचा परिघ किती असेल? (π = २२/७ वापरा))", ["A) 22 cm", "B) 44 cm", "C) 154 cm", "D) 88 cm"], "B"],
+["Find the missing number in the sequence: 4, 9, 16, 25, ___. (क्रमातील गहाळ संख्या शोधा: ४, ९, १६, २५, ___.)", ["A) 30", "B) 36", "C) 49", "D) 40"], "B"],
+["Simplify: 5 + (10 × 2) - 8 ÷ 4. (सोपे रूप द्या: ५ + (१० × २) - ८ ÷ ४.)", ["A) 10.5", "B) 23", "C) 6", "D) 20"], "B"],
 
 // General Knowledge
-["Which of the following cities hosted the G20 Summit in India in 2023? (2023 मध्ये भारतातील G20 शिखर परिषदेचे यजमान शहर कोणते होते?)", ["A) Mumbai (मुंबई)", "B) Bengaluru (बंगळूरु)", "C) New Delhi (नवी दिल्ली)", "D) Chennai (चेन्नई)"], "C"],
-["Who is known as the 'Iron Man of India'? ('भारताचे लोहपुरुष' म्हणून कोणाला ओळखले जाते?)", ["A) Mahatma Gandhi (महात्मा गांधी)", "B) Sardar Vallabhbhai Patel (सरदार वल्लभभाई पटेल)", "C) Jawaharlal Nehru (जवाहरलाल नेहरू)", "D) Subhas Chandra Bose (सुभाषचंद्र बोस)"], "B"],
-["Which article of the Indian Constitution grants the 'Right to Equality'? (भारतीय संविधानाचा कोणता अनुच्छेद 'समानतेचा हक्क' प्रदान करतो?)", ["A) Article 14 (अनुच्छेद 14)", "B) Article 19 (अनुच्छेद 19)", "C) Article 21 (अनुच्छेद 21)", "D) Article 32 (अनुच्छेद 32)"], "A"],
-["What is the full form of NEP in the context of Indian education? (भारतीय शिक्षण संदर्भात NEP चे पूर्ण रूप काय आहे?)", ["A) National Education Program (राष्ट्रीय शिक्षण कार्यक्रम)", "B) New Examination Policy (नवीन परीक्षा धोरण)", "C) National Education Policy (राष्ट्रीय शिक्षण धोरण)", "D) National Employment Plan (राष्ट्रीय रोजगार योजना)"], "C"],
-["Which of the following is an 'Institute of Eminence' as declared by the Government of India? (भारत सरकारने 'इन्स्टिट्यूट ऑफ एमिनन्स' म्हणून घोषित केलेली खालीलपैकी कोणती संस्था आहे?)", ["A) University of Mumbai (मुंबई विद्यापीठ)", "B) IIT Bombay (आयआयटी मुंबई)", "C) Delhi University (दिल्ली विद्यापीठ)", "D) Jawaharlal Nehru University (जवाहरलाल नेहरू विद्यापीठ)"], "B"],
+["The National Education Policy (NEP) 2020 replaces which previous policy? (राष्ट्रीय शिक्षण धोरण (NEP) २०२० कोणत्या पूर्वीच्या धोरणाची जागा घेते?)", ["A) National Policy on Education, 1968 (राष्ट्रीय शिक्षण धोरण, १९६८)", "B) National Policy on Education, 1986 (राष्ट्रीय शिक्षण धोरण, १९८६)", "C) Sarva Shiksha Abhiyan, 2001 (सर्व शिक्षा अभियान, २००१)", "D) Right to Education Act, 2009 (शिक्षण हक्क कायदा, २००९)"], "B"],
+["Who is the current Governor of the Reserve Bank of India (as of July 2024)? (भारतीय रिझर्व्ह बँकेचे सध्याचे गव्हर्नर कोण आहेत (जुलै २०२४ नुसार)?)", ["A) Raghuram Rajan", "B) Urjit Patel", "C) Shaktikanta Das", "D) Nirmala Sitharaman"], "C"],
+["Which country is not a member of the BRICS group? (खालीलपैकी कोणता देश BRICS गटाचा सदस्य नाही?)", ["A) Brazil (ब्राझील)", "B) Russia (रशिया)", "C) Canada (कॅनडा)", "D) South Africa (दक्षिण आफ्रिका)"], "C"],
+["The 'Visitor' of all Central Universities and IITs in India is: (भारतातील सर्व केंद्रीय विद्यापीठे आणि आयआयटीचे 'व्हिजिटर' (अभ्यागत) कोण असतात?)", ["A) The Prime Minister of India (भारताचे पंतप्रधान)", "B) The Minister of Education (शिक्षण मंत्री)", "C) The President of India (भारताचे राष्ट्रपती)", "D) The Chief Justice of India (भारताचे सरन्यायाधीश)"], "C"],
+["What is the theme of India's G20 Presidency? (भारताच्या G20 अध्यक्षतेची संकल्पना काय आहे?)", ["A) 'One Earth, One Family, One Future' ('एक पृथ्वी, एक कुटुंब, एक भविष्य')", "B) 'Recover Together, Recover Stronger' ('एकत्र सावरा, अधिक मजबूत व्हा')", "C) 'Shaping an Interconnected World' ('एकमेकांशी जोडलेल्या जगाला आकार देणे')", "D) 'Realizing Opportunities of the 21st Century For All' ('सर्वांसाठी २१व्या शतकातील संधी ओळखणे')"], "A"],
 
 // Reasoning and Analytical Skills
-["Statements: All pens are pencils. All pencils are erasers. Conclusion: (विधाने: सर्व पेन पेन्सिल आहेत. सर्व पेन्सिल खोडरबर आहेत. निष्कर्ष:)", ["A) All erasers are pens. (सर्व खोडरबर पेन आहेत.)", "B) Some erasers are pens. (काही खोडरबर पेन आहेत.)", "C) No pen is an eraser. (कोणताही पेन खोडरबर नाही.)", "D) Some pencils are not pens. (काही पेन्सिल पेन नाहीत.)"], "B"],
-["'Book' is to 'Library' as 'Animal' is to _______. ('पुस्तक' चा संबंध 'ग्रंथालय' शी आहे, तसा 'प्राणी' चा संबंध _______ शी आहे.)", ["A) Zoo (प्राणी संग्रहालय)", "B) Forest (जंगल)", "C) Cage (पिंजरा)", "D) House (घर)"], "A"],
-["Find the odd one out: (विसंगत शब्द ओळखा:)", ["A) Chair (खुर्ची)", "B) Table (टेबल)", "C) Sofa (सोफा)", "D) Lamp (दिवा)"], "D"],
-["If 'WATER' is coded as 'XBUFS', then 'FIRE' is coded as: (जर 'WATER' ला 'XBUFS' असे कोड केले जाते, तर 'FIRE' ला कसे कोड केले जाईल:)", ["A) GJRF", "B) GHSE", "C) GHSP", "D) GJTE"], "A"],
-["Point out the correct direction: A person walks 10m East, then turns right and walks 5m, then turns right again and walks 10m. In which direction is he now from his starting point? (योग्य दिशा ओळखा: एक व्यक्ती 10 मीटर पूर्वेकडे चालतो, नंतर उजवीकडे वळून 5 मीटर चालतो, नंतर पुन्हा उजवीकडे वळून 10 मीटर चालतो. तो आता त्याच्या सुरुवातीच्या बिंदूपासून कोणत्या दिशेत आहे?)", ["A) East (पूर्व)", "B) West (पश्चिम)", "C) South (दक्षिण)", "D) North (उत्तर)"], "C"],
+["If 'CAT' is coded as 24, and 'DOG' is coded as 26, how will 'TIGER' be coded? (A=1, B=2...) (जर 'CAT' चा कोड २४ आणि 'DOG' चा कोड २६ असेल, तर 'TIGER' चा कोड काय असेल? (A=1, B=2...))", ["A) 50", "B) 55", "C) 60", "D) 65"], "C"],
+["Which of the following diagrams best represents the relationship between 'Doctors', 'Surgeons', and 'Nurses'? (खालीलपैकी कोणती आकृती 'डॉक्टर', 'सर्जन' आणि 'नर्स' यांच्यातील संबंध उत्तम प्रकारे दर्शवते?)", ["A) Three separate circles (तीन वेगळी वर्तुळे)", "B) One circle inside another, and a third separate circle (एका वर्तुळात दुसरे वर्तुळ आणि तिसरे वेगळे)", "C) Two intersecting circles, and a third separate circle (दोन एकमेकांना छेदणारी वर्तुळे आणि तिसरे वेगळे)", "D) One circle inside a larger circle, which intersects with a third circle (एका मोठ्या वर्तुळात एक वर्तुळ, जे तिसऱ्या वर्तुळाला छेदते)"], "B"],
+["Find the odd one out: (विसंगत शब्द ओळखा:)", ["A) Mumbai (मुंबई)", "B) Chennai (चेन्नई)", "C) Kolkata (कोलकाता)", "D) Pune (पुणे)"], "D"],
+["A man is facing North. He turns 90 degrees in the clockwise direction and then another 180 degrees in the same direction. Which direction is he facing now? (एक माणूस उत्तरेकडे तोंड करून उभा आहे. तो घड्याळाच्या दिशेने ९० अंशात वळतो आणि नंतर त्याच दिशेने १८० अंशात वळतो. आता तो कोणत्या दिशेला तोंड करून आहे?)", ["A) North (उत्तर)", "B) South (दक्षिण)", "C) East (पूर्व)", "D) West (पश्चिम)"], "D"],
+["Statement: All government employees are eligible for a pension. Ram is a government employee. Conclusion: (विधान: सर्व सरकारी कर्मचारी पेन्शनसाठी पात्र आहेत. राम एक सरकारी कर्मचारी आहे. निष्कर्ष:)", ["A) Ram is eligible for a pension. (राम पेन्शनसाठी पात्र आहे.)", "B) Ram is not eligible for a pension. (राम पेन्शनसाठी पात्र नाही.)", "C) All pensioners are government employees. (सर्व पेन्शनधारक सरकारी कर्मचारी आहेत.)", "D) Cannot be determined. (निश्चित करता येत नाही.)"], "A"],
 
 // Computer Knowledge
-["Which of the following is an input device? (खालीलपैकी कोणते इनपुट डिव्हाइस आहे?)", ["A) Monitor (मॉनिटर)", "B) Printer (प्रिंटर)", "C) Keyboard (कीबोर्ड)", "D) Speaker (स्पीकर)"], "C"],
-["Which of these is NOT an operating system? (खालीलपैकी कोणते ऑपरेटिंग सिस्टम नाही?)", ["A) Windows (विंडोज)", "B) Linux (लिनक्स)", "C) MS Word (एमएस वर्ड)", "D) macOS (मॅकओएस)"], "C"],
-["What does 'URL' stand for in terms of internet addressing? (इंटरनेट ॲड्रेसिंगच्या संदर्भात 'URL' चे पूर्ण रूप काय आहे?)", ["A) Universal Resource Link (युनिव्हर्सल रिसोर्स लिंक)", "B) Uniform Resource Locator (युनिफॉर्म रिसोर्स लोकेटर)", "C) Unified Remote Link (युनिफाइड रिमोट लिंक)", "D) User Response Logic (यूझर रिस्पॉन्स लॉजिक)"], "B"],
-["Which of the following is a type of primary memory? (खालीलपैकी कोणता प्राथमिक मेमरीचा प्रकार आहे?)", ["A) Hard Disk (हार्ड डिस्क)", "B) Pen Drive (पेन ड्राइव्ह)", "C) RAM (रॅम)", "D) SSD (एसएसडी)"], "C"],
-["Which software is used to create and edit text documents? (टेक्स्ट डॉक्युमेंट्स तयार करण्यासाठी आणि एडिट करण्यासाठी कोणते सॉफ्टवेअर वापरले जाते?)", ["A) Microsoft Excel (मायक्रोसॉफ्ट एक्सेल)", "B) Microsoft PowerPoint (मायक्रोसॉफ्ट पॉवरपॉइंट)", "C) Microsoft Word (मायक्रोसॉफ्ट वर्ड)", "D) Microsoft Access (मायक्रोसॉफ्ट ॲक्सेस)"], "C"]
+["What does 'BCC' stand for in an email? (ईमेलमध्ये 'BCC' चा अर्थ काय आहे?)", ["A) Blind Carbon Copy", "B) Basic Carbon Copy", "C) Bold Carbon Copy", "D) Backup Carbon Copy"], "A"],
+["Which of the following is a web browser? (खालीलपैकी कोणता वेब ब्राउझर आहे?)", ["A) Microsoft Word", "B) Google Chrome", "C) Adobe Photoshop", "D) Python"], "B"],
+["A collection of related web pages is called a: (संबंधित वेब पृष्ठांच्या संग्रहाला काय म्हणतात?)", ["A) Website (वेबसाइट)", "B) Web server (वेब सर्वर)", "C) Search engine (सर्च इंजिन)", "D) Web browser (वेब ब्राउझर)"], "A"],
+["Which keyboard shortcut is used to 'Save' a document? (दस्तऐवज 'सेव्ह' करण्यासाठी कोणता कीबोर्ड शॉर्टकट वापरला जातो?)", ["A) Ctrl + P", "B) Ctrl + C", "C) Ctrl + S", "D) Ctrl + V"], "C"],
+["1 Megabyte (MB) is equal to: (१ मेगाबाइट (MB) म्हणजे:)", ["A) 1024 Bytes", "B) 1024 Kilobytes (KB)", "C) 1024 Gigabytes (GB)", "D) 1000 Bytes"], "B"]
 ];
 
 const form = document.getElementById('quizForm');
 
+// प्रश्नांची निर्मिती
 questions.forEach((q, i) => {
   const div = document.createElement('div');
   div.className = "question-block";
@@ -83,6 +87,7 @@ questions.forEach((q, i) => {
   form.appendChild(div);
 });
 
+// निकाल तपासण्यासाठी फंक्शन
 document.getElementById('submitBtn').onclick = function() {
   let score = 0;
   for (let i = 0; i < questions.length; i++) {
@@ -101,12 +106,13 @@ document.getElementById('submitBtn').onclick = function() {
         });
       }
     } else {
+      // जर कोणतेही उत्तर निवडले नसेल तर योग्य उत्तर दाखवा
       options.forEach(o => {
         if (o.value === correct) o.parentElement.classList.add('correct');
       });
     }
   }
-  document.getElementById('result').innerText = `✅ Your Score: ${score} / ${questions.length}`;
+  document.getElementById('result').innerText = `✅ तुमचा निकाल: ${score} / ${questions.length}`;
 };
 </script>
 </body>
