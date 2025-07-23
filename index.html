@@ -1,10 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ADVANCED CBT TEST</title>
+  <meta charset="UTF-8">
+  <title>JAA Day 6 – Intermediate Level</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f1f5f9; }
+    .question-block {
+      background: #fff; padding: 15px; margin-bottom: 10px;
+      border-radius: 10px; box-shadow: 0 0 6px #ccc;
+    }
+    .option { display: block; margin: 5px 0; }
+    .correct { background-color: #d4edda; }
+    .incorrect { background-color: #f8d7da; }
+    #submitBtn {
+      padding: 10px 25px; font-size: 16px;
+      background: #007bff; color: white;
+      border: none; border-radius: 5px;
+    }
+    #result {
+      margin-top: 20px; font-weight: bold; font-size: 18px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to ADVANCED Test Zone!</h1>
-  <p>This is your new advanced-level CBT practice system.</p>
+<h2>JAA Day 6 – Intermediate Practice Test (25 Questions)</h2>
+<form id='quizForm'></form>
+<button id="submitBtn">Submit</button>
+<div id="result"></div>
+<script>
+const questions = [
+// Language
+["Choose the sentence that is grammatically correct. (व्याकरणाच्या दृष्टीने योग्य असलेले वाक्य निवडा.)", ["A) He don't like coffee. (तो कॉफी पसंत करत नाही.)", "B) She sings beautiful. (ती सुंदर गाते.)", "C) They were going to the market. (ते बाजारात जात होते.)", "D) I has a car. (माझ्याकडे एक गाडी आहे.)"], "C"],
+["What does the idiom 'Bite the bullet' mean? ('बाइट द बुलेट' या वाक्प्रचाराचा अर्थ काय आहे?)", ["A) To eat something quickly. (घाईघाईने काहीतरी खाणे.)", "B) To face a difficult situation with courage. (कठीण परिस्थितीला धैर्याने सामोरे जाणे.)", "C) To complain loudly. (मोठ्याने तक्रार करणे.)", "D) To give up easily. (सहजपणे हार मानणे.)"], "B"],
+["Find the synonym of 'Diligent'. ('डिलिजंट' या शब्दाचा समानार्थी शब्द शोधा.)", ["A) Lazy (आळशी)", "B) Hard-working (कष्टाळू)", "C) Careless (निष्काळजी)", "D) Slow (हळू)"], "B"],
+["Find the antonym of 'Transparent'. ('ट्रान्सपरंट' या शब्दाचा विरुद्धार्थी शब्द शोधा.)", ["A) Clear (स्पष्ट)", "B) Opaque (अपारदर्शक)", "C) Visible (दृश्यमान)", "D) Lucid (सुस्पष्ट)"], "B"],
+["The train was running ______ schedule. (ट्रेन वेळापत्रकानुसार ______ धावत होती.)", ["A) on (वर)", "B) at (येथे)", "C) in (मध्ये)", "D) to (कडे)"], "A"],
+
+// Mathematics
+["What is the next term in the series: 3, 7, 13, 21, ? (मालिका 3, 7, 13, 21, ? मधील पुढील पद काय आहे?)", ["A) 29", "B) 31", "C) 33", "D) 27"], "B"],
+["If 2x + 5 = 15, then what is the value of x? (जर 2x + 5 = 15, तर x ची किंमत काय आहे?)", ["A) 5", "B) 10", "C) 2.5", "D) 7.5"], "A"],
+["An angle that measures exactly 90 degrees is called a/an ______ angle. (जो कोन नेमका 90 अंशांचा असतो, त्याला ______ कोन म्हणतात.)", ["A) Acute (लघुकोन)", "B) Obtuse (विशालकोन)", "C) Right (काटकोन)", "D) Straight (सरळ कोन)"], "C"],
+["If 40% of a number is 20, what is the number? (एका संख्येच्या 40% हे 20 असल्यास, ती संख्या कोणती?)", ["A) 40", "B) 50", "C) 80", "D) 100"], "B"],
+["What is the average of 10, 20, and 30? (10, 20 आणि 30 ची सरासरी किती आहे?)", ["A) 15", "B) 20", "C) 25", "D) 60"], "B"],
+
+// General Knowledge
+["Which of the following cities hosted the G20 Summit in India in 2023? (2023 मध्ये भारतातील G20 शिखर परिषदेचे यजमान शहर कोणते होते?)", ["A) Mumbai (मुंबई)", "B) Bengaluru (बंगळूरु)", "C) New Delhi (नवी दिल्ली)", "D) Chennai (चेन्नई)"], "C"],
+["Who is known as the 'Iron Man of India'? ('भारताचे लोहपुरुष' म्हणून कोणाला ओळखले जाते?)", ["A) Mahatma Gandhi (महात्मा गांधी)", "B) Sardar Vallabhbhai Patel (सरदार वल्लभभाई पटेल)", "C) Jawaharlal Nehru (जवाहरलाल नेहरू)", "D) Subhas Chandra Bose (सुभाषचंद्र बोस)"], "B"],
+["Which article of the Indian Constitution grants the 'Right to Equality'? (भारतीय संविधानाचा कोणता अनुच्छेद 'समानतेचा हक्क' प्रदान करतो?)", ["A) Article 14 (अनुच्छेद 14)", "B) Article 19 (अनुच्छेद 19)", "C) Article 21 (अनुच्छेद 21)", "D) Article 32 (अनुच्छेद 32)"], "A"],
+["What is the full form of NEP in the context of Indian education? (भारतीय शिक्षण संदर्भात NEP चे पूर्ण रूप काय आहे?)", ["A) National Education Program (राष्ट्रीय शिक्षण कार्यक्रम)", "B) New Examination Policy (नवीन परीक्षा धोरण)", "C) National Education Policy (राष्ट्रीय शिक्षण धोरण)", "D) National Employment Plan (राष्ट्रीय रोजगार योजना)"], "C"],
+["Which of the following is an 'Institute of Eminence' as declared by the Government of India? (भारत सरकारने 'इन्स्टिट्यूट ऑफ एमिनन्स' म्हणून घोषित केलेली खालीलपैकी कोणती संस्था आहे?)", ["A) University of Mumbai (मुंबई विद्यापीठ)", "B) IIT Bombay (आयआयटी मुंबई)", "C) Delhi University (दिल्ली विद्यापीठ)", "D) Jawaharlal Nehru University (जवाहरलाल नेहरू विद्यापीठ)"], "B"],
+
+// Reasoning and Analytical Skills
+["Statements: All pens are pencils. All pencils are erasers. Conclusion: (विधाने: सर्व पेन पेन्सिल आहेत. सर्व पेन्सिल खोडरबर आहेत. निष्कर्ष:)", ["A) All erasers are pens. (सर्व खोडरबर पेन आहेत.)", "B) Some erasers are pens. (काही खोडरबर पेन आहेत.)", "C) No pen is an eraser. (कोणताही पेन खोडरबर नाही.)", "D) Some pencils are not pens. (काही पेन्सिल पेन नाहीत.)"], "B"],
+["'Book' is to 'Library' as 'Animal' is to _______. ('पुस्तक' चा संबंध 'ग्रंथालय' शी आहे, तसा 'प्राणी' चा संबंध _______ शी आहे.)", ["A) Zoo (प्राणी संग्रहालय)", "B) Forest (जंगल)", "C) Cage (पिंजरा)", "D) House (घर)"], "A"],
+["Find the odd one out: (विसंगत शब्द ओळखा:)", ["A) Chair (खुर्ची)", "B) Table (टेबल)", "C) Sofa (सोफा)", "D) Lamp (दिवा)"], "D"],
+["If 'WATER' is coded as 'XBUFS', then 'FIRE' is coded as: (जर 'WATER' ला 'XBUFS' असे कोड केले जाते, तर 'FIRE' ला कसे कोड केले जाईल:)", ["A) GJRF", "B) GHSE", "C) GHSP", "D) GJTE"], "A"],
+["Point out the correct direction: A person walks 10m East, then turns right and walks 5m, then turns right again and walks 10m. In which direction is he now from his starting point? (योग्य दिशा ओळखा: एक व्यक्ती 10 मीटर पूर्वेकडे चालतो, नंतर उजवीकडे वळून 5 मीटर चालतो, नंतर पुन्हा उजवीकडे वळून 10 मीटर चालतो. तो आता त्याच्या सुरुवातीच्या बिंदूपासून कोणत्या दिशेत आहे?)", ["A) East (पूर्व)", "B) West (पश्चिम)", "C) South (दक्षिण)", "D) North (उत्तर)"], "C"],
+
+// Computer Knowledge
+["Which of the following is an input device? (खालीलपैकी कोणते इनपुट डिव्हाइस आहे?)", ["A) Monitor (मॉनिटर)", "B) Printer (प्रिंटर)", "C) Keyboard (कीबोर्ड)", "D) Speaker (स्पीकर)"], "C"],
+["Which of these is NOT an operating system? (खालीलपैकी कोणते ऑपरेटिंग सिस्टम नाही?)", ["A) Windows (विंडोज)", "B) Linux (लिनक्स)", "C) MS Word (एमएस वर्ड)", "D) macOS (मॅकओएस)"], "C"],
+["What does 'URL' stand for in terms of internet addressing? (इंटरनेट ॲड्रेसिंगच्या संदर्भात 'URL' चे पूर्ण रूप काय आहे?)", ["A) Universal Resource Link (युनिव्हर्सल रिसोर्स लिंक)", "B) Uniform Resource Locator (युनिफॉर्म रिसोर्स लोकेटर)", "C) Unified Remote Link (युनिफाइड रिमोट लिंक)", "D) User Response Logic (यूझर रिस्पॉन्स लॉजिक)"], "B"],
+["Which of the following is a type of primary memory? (खालीलपैकी कोणता प्राथमिक मेमरीचा प्रकार आहे?)", ["A) Hard Disk (हार्ड डिस्क)", "B) Pen Drive (पेन ड्राइव्ह)", "C) RAM (रॅम)", "D) SSD (एसएसडी)"], "C"],
+["Which software is used to create and edit text documents? (टेक्स्ट डॉक्युमेंट्स तयार करण्यासाठी आणि एडिट करण्यासाठी कोणते सॉफ्टवेअर वापरले जाते?)", ["A) Microsoft Excel (मायक्रोसॉफ्ट एक्सेल)", "B) Microsoft PowerPoint (मायक्रोसॉफ्ट पॉवरपॉइंट)", "C) Microsoft Word (मायक्रोसॉफ्ट वर्ड)", "D) Microsoft Access (मायक्रोसॉफ्ट ॲक्सेस)"], "C"]
+];
+
+const form = document.getElementById('quizForm');
+
+questions.forEach((q, i) => {
+  const div = document.createElement('div');
+  div.className = "question-block";
+  div.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q[0]}</p>`;
+  q[1].forEach((opt, j) => {
+    const optLabel = String.fromCharCode(65 + j);
+    div.innerHTML += `
+      <label class="option">
+        <input type="radio" name="q${i}" value="${optLabel}"> ${optLabel}) ${opt}
+      </label>
+    `;
+  });
+  div.innerHTML += `<input type="hidden" id="ans${i}" value="${q[2]}">`;
+  form.appendChild(div);
+});
+
+document.getElementById('submitBtn').onclick = function() {
+  let score = 0;
+  for (let i = 0; i < questions.length; i++) {
+    const correct = document.getElementById('ans' + i).value;
+    const selected = document.querySelector('input[name="q' + i + '"]:checked');
+    const options = document.getElementsByName('q' + i);
+    options.forEach(o => o.parentElement.classList.remove('correct', 'incorrect'));
+    if (selected) {
+      if (selected.value === correct) {
+        selected.parentElement.classList.add('correct');
+        score++;
+      } else {
+        selected.parentElement.classList.add('incorrect');
+        options.forEach(o => {
+          if (o.value === correct) o.parentElement.classList.add('correct');
+        });
+      }
+    } else {
+      options.forEach(o => {
+        if (o.value === correct) o.parentElement.classList.add('correct');
+      });
+    }
+  }
+  document.getElementById('result').innerText = `✅ Your Score: ${score} / ${questions.length}`;
+};
+</script>
 </body>
 </html>
