@@ -2,14 +2,32 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>JAA Practice Test - Set 4</title>
+  <title>JAA Practice Test - Set 5 (With Explanations)</title>
   <style>
     body { font-family: sans-serif; padding: 20px; background: #f1f5f9; }
     .question-block {
       background: #fff; padding: 15px; margin-bottom: 10px;
       border-radius: 10px; box-shadow: 0 0 6px #ccc;
+      position: relative; /* For explanation positioning */
     }
     .option { display: block; margin: 5px 0; }
+    .explanation {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #e0f7fa; /* Light blue for explanations */
+      border-left: 5px solid #00bcd4;
+      font-size: 0.9em;
+      color: #333;
+      display: none; /* Hidden by default */
+      border-radius: 5px;
+    }
+    .explanation.show {
+      display: block;
+    }
+    .correct-option-text {
+      font-weight: bold;
+      color: #28a745; /* Green for correct answer text */
+    }
     .correct { background-color: #d4edda; }
     .incorrect { background-color: #f8d7da; }
     #submitBtn {
@@ -17,6 +35,7 @@
       background: #007bff; color: white;
       border: none; border-radius: 5px;
       cursor: pointer;
+      margin-top: 20px;
     }
     #result {
       margin-top: 20px; font-weight: bold; font-size: 18px;
@@ -24,7 +43,7 @@
   </style>
 </head>
 <body>
-<h2>JAA Practice Test - Set 4 (25 Questions)</h2>
+<h2>JAA Practice Test - Set 5 (25 Questions with Explanations)</h2>
 <p>तुमच्या आजच्या सरावासाठी २५ प्रश्न. (25 questions for your practice today.)</p>
 <form id='quizForm'></form>
 <button id="submitBtn">Submit</button>
@@ -33,39 +52,194 @@
 // प्रश्न आणि उत्तरांचा संच
 const questions = [
 // Language (भाषा)
-["Choose the phrase that best completes the sentence: The committee decided to _______ the proposal due to lack of funds. (वाक्य पूर्ण करणारा सर्वोत्तम वाक्प्रचार निवडा: निधीच्या कमतरतेमुळे समितीने प्रस्तावाला _______ देण्याचे ठरवले.)", ["A) go through with (पूर्ण करणे)", "B) put off (स्थगित करणे)", "C) speed up (वेग वाढवणे)", "D) look into (तपास करणे)"], "B"],
-["Identify the sentence with an error in subject-verb agreement. (कर्त्यानुसार क्रियापदाच्या चुकीच्या वापराचे वाक्य ओळखा.)", ["A) The dog and the cat are playing. (कुत्रा आणि मांजर खेळत आहेत.)", "B) Neither of the options is correct. (दोन्हीपैकी कोणताही पर्याय योग्य नाही.)", "C) Every one of the students have passed the exam. (प्रत्येक विद्यार्थी परीक्षेत उत्तीर्ण झाला आहे.)", "D) The team works well together. (संघ एकत्र चांगले काम करतो.)"], "C"],
-["What is the meaning of the idiom 'To throw in the towel'? ('टू थ्रो इन द टॉवेल' या वाक्प्रचाराचा अर्थ काय आहे?)", ["A) To surrender or give up (शरणागती पत्करणे किंवा हार मानणे)", "B) To clean up a mess (गोंधळ साफ करणे)", "C) To start a fight (भांडण सुरू करणे)", "D) To offer help (मदत करणे)"], "A"],
-["Find the antonym for 'Ephemeral'. ('एफेमरल' या शब्दाचा विरुद्धार्थी शब्द शोधा.)", ["A) Temporary (तात्पुरता)", "B) Permanent (कायमस्वरूपी)", "C) Fleeting (क्षणभंगुर)", "D) Brief (संक्षिप्त)"], "B"],
-["Choose the correct form of the verb: If I ______ a bird, I would fly. (क्रियापदाचे योग्य रूप निवडा: जर मी एक पक्षी ______ असतो, तर मी उडलो असतो.)", ["A) was (होतो)", "B) were (असतो)", "C) am (आहे)", "D) have been (असलो आहे)"], "B"],
+{
+  q: "Choose the sentence that uses the subjunctive mood correctly. (अधोरेखित वाक्य योग्य प्रकारे वापरलेले वाक्य निवडा.)",
+  options: ["A) If I was you, I would accept the offer. (जर मी तू असतो, तर मी ऑफर स्वीकारली असती.)", "B) If I were you, I would accept the offer. (जर मी तू असतो, तर मी ऑफर स्वीकारली असती.)", "C) If I am you, I would accept the offer. (जर मी तू आहे, तर मी ऑफर स्वीकारली असती.)", "D) If I had been you, I would accept the offer. (जर मी तू असतो, तर मी ऑफर स्वीकारली असती.)"],
+  ans: "B",
+  explanation: "The subjunctive mood uses 'were' for hypothetical or contrary-to-fact situations, even with singular subjects like 'I'.\n('Were' हे क्रियापद काल्पनिक किंवा वस्तुस्थितीच्या विरुद्ध असलेल्या परिस्थितींसाठी वापरले जाते, जरी कर्ता 'मी' (I) एकवचनी असला तरी.)"
+},
+{
+  q: "What does the phrase 'To bite off more than one can chew' mean? ('टू बाइट ऑफ मोअर दॅन वन कॅन च्यू' या वाक्प्रचाराचा अर्थ काय आहे?)",
+  options: ["A) To eat too much food. (खूप जास्त अन्न खाणे.)", "B) To take on a task that is too big or difficult. (खूप मोठे किंवा कठीण काम हाती घेणे.)", "C) To speak too loudly. (खूप मोठ्याने बोलणे.)", "D) To be indecisive. (अनिर्णित असणे.)"],
+  ans: "B",
+  explanation: "This idiom means to attempt to do something that is too difficult or beyond one's capability.\n(या वाक्प्रचाराचा अर्थ असा आहे की, आपल्या क्षमतेबाहेरचे किंवा खूप कठीण असलेले काम हाती घेण्याचा प्रयत्न करणे.)"
+},
+{
+  q: "Find the synonym for 'Ubiquitous'. ('युबिक्विटस' या शब्दाचा समानार्थी शब्द शोधा.)",
+  options: ["A) Rare (दुर्मिळ)", "B) Scarce (अपुऱ्या प्रमाणात)", "C) Omnipresent (सर्वव्यापी)", "D) Limited (मर्यादित)"],
+  ans: "C",
+  explanation: "'Ubiquitous' means present, appearing, or found everywhere; hence, 'omnipresent' is its closest synonym.\n('Ubiquitous' म्हणजे सर्वत्र उपस्थित असणे किंवा आढळणे; म्हणून 'सर्वव्यापी' (Omnipresent) हा त्याचा सर्वात जवळचा समानार्थी शब्द आहे.)"
+},
+{
+  q: "Identify the sentence with a dangling modifier. (डँगलिंग मॉडिफायर असलेले वाक्य ओळखा.)",
+  options: ["A) Walking down the street, the trees were beautiful. (रस्त्याने चालताना, झाडे सुंदर होती.)", "B) After finishing the book, he went to bed. (पुस्तक पूर्ण केल्यावर, तो झोपायला गेला.)", "C) Having studied hard, she passed the exam. (खूप अभ्यास केल्यामुळे, ती परीक्षेत उत्तीर्ण झाली.)", "D) While cooking dinner, the phone rang. (रात्रीचे जेवण बनवत असताना, फोन वाजला.)"],
+  ans: "A",
+  explanation: "A dangling modifier occurs when the grammatical subject of the modifying phrase is not the same as the grammatical subject of the main clause. Here, it implies the trees were walking. The correct subject (the person walking) is missing.\n('डँगलिंग मॉडिफायर' तेव्हा होतो जेव्हा वाक्यातील मुख्य भागाचा कर्ता आणि क्रियाविशेषण वाक्यांश (modifying phrase) यांचा कर्ता एकच नसतो. इथे, झाडे चालत होती असा अर्थ निघतो, जो चुकीचा आहे.)"
+},
+{
+  q: "Choose the correct phrasal verb: The company decided to ______ the new policy. (योग्य फ्रेजल वर्ब निवडा: कंपनीने नवीन धोरण ______ करण्याचे ठरवले.)",
+  options: ["A) put up with (सहन करणे)", "B) bring about (घडवून आणणे)", "C) call off (रद्द करणे)", "D) carry out (अंमलात आणणे)"],
+  ans: "D",
+  explanation: "'To carry out' means to perform, execute, or implement a plan, order, or policy.\n('To carry out' म्हणजे एखादी योजना, आदेश किंवा धोरण अंमलात आणणे किंवा पूर्ण करणे.)"
+},
 
 // Mathematics (गणित)
-["A sum of money doubles itself in 8 years at simple interest. In how many years will it triple itself at the same rate? (एक रक्कम ८ वर्षांत सरळ व्याजाने दुप्पट होते. त्याच दराने ती रक्कम किती वर्षांत तिप्पट होईल?)", ["A) 12 years (१२ वर्षे)", "B) 16 years (१६ वर्षे)", "C) 24 years (२४ वर्षे)", "D) 32 years (३२ वर्षे)"], "B"],
-["If A can do a piece of work in 10 days and B can do it in 15 days, in how many days will they complete the work together? (जर A एक काम १० दिवसांत करू शकतो आणि B ते १५ दिवसांत करू शकतो, तर ते दोघे मिळून ते काम किती दिवसांत पूर्ण करतील?)", ["A) 5 days (५ दिवस)", "B) 6 days (६ दिवस)", "C) 7.5 days (७.५ दिवस)", "D) 12.5 days (१२.५ दिवस)"], "B"],
-["The average age of 30 students in a class is 15 years. If the age of the teacher is also included, the average age becomes 16 years. What is the teacher's age? (एका वर्गातील ३० विद्यार्थ्यांचे सरासरी वय १५ वर्षे आहे. जर शिक्षकाचे वय देखील समाविष्ट केले, तर सरासरी वय १६ वर्षे होते. शिक्षकाचे वय किती आहे?)", ["A) 45 years (४५ वर्षे)", "B) 46 years (४६ वर्षे)", "C) 47 years (४७ वर्षे)", "D) 48 years (४८ वर्षे)"], "B"],
-["A train 120 meters long crosses a pole in 6 seconds. What is the speed of the train in km/hr? (१२० मीटर लांबीची एक ट्रेन एका खांबाला ६ सेकंदात ओलांडते. ट्रेनचा वेग किमी/तास मध्ये किती आहे?)", ["A) 60 km/hr (६० किमी/तास)", "B) 72 km/hr (७२ किमी/तास)", "C) 80 km/hr (८० किमी/तास)", "D) 90 km/hr (९० किमी/तास)"], "B"],
-["Find the value of x: 3x - 7 = 5x - 13. (x ची किंमत शोधा: 3x - 7 = 5x - 13.)", ["A) 2", "B) 3", "C) 4", "D) 5"], "B"],
+{
+  q: "A grocer has a sale of Rs. 6435, Rs. 6927, Rs. 6855, Rs. 7230 and Rs. 6562 for 5 consecutive months. How much sale must he have in the sixth month so that he gets an average sale of Rs. 6500? (एका किराणा दुकानदाराची सलग ५ महिन्यांची विक्री रु. ६४३५, रु. ६९२७, रु. ६८५५, रु. ७२३० आणि रु. ६५६२ आहे. सहाव्या महिन्यात त्याची किती विक्री असावी जेणेकरून त्याला रु. ६५०० ची सरासरी विक्री मिळेल?)",
+  options: ["A) Rs. 4991", "B) Rs. 5000", "C) Rs. 5100", "D) Rs. 5250"],
+  ans: "A",
+  explanation: "Total required sale for 6 months = 6500 * 6 = 39000. Sum of first 5 months' sales = 6435 + 6927 + 6855 + 7230 + 6562 = 34009. Sale in 6th month = 39000 - 34009 = 4991.\n(६ महिन्यांची एकूण अपेक्षित विक्री = ६५०० * ६ = ३९०००. पहिल्या ५ महिन्यांची एकूण विक्री = ३४००९. म्हणून, ६ व्या महिन्याची विक्री = ३९००० - ३४००९ = ४९९१.)"
+},
+{
+  q: "What percentage of numbers from 1 to 70 have 1 or 9 in the unit's digit? (१ ते ७० पर्यंतच्या संख्यांपैकी किती टक्के संख्यांच्या एकक स्थानी १ किंवा ९ आहे?)",
+  options: ["A) 10%", "B) 15%", "C) 20%", "D) 14.28%"],
+  ans: "C",
+  explanation: "Numbers from 1 to 70 with unit digit 1 are (1, 11, 21, 31, 41, 51, 61) = 7 numbers. Numbers with unit digit 9 are (9, 19, 29, 39, 49, 59, 69) = 7 numbers. Total = 7 + 7 = 14 numbers. Percentage = (14/70) * 100 = 20%.\n(१ ते ७० पर्यंत, ज्यांच्या एकक स्थानी १ आहे त्या ७ संख्या आहेत आणि ज्यांच्या एकक स्थानी ९ आहे त्या ७ संख्या आहेत. एकूण १४ संख्या. टक्केवारी = (१४/७०) * १०० = २०%.)"
+},
+{
+  q: "On selling 17 balls at Rs. 720, there is a loss equal to the cost price of 5 balls. The cost price of a ball is: (१७ चेंडू ७२० रुपयांना विकल्यावर, ५ चेंडूंच्या खरेदी किमतीइतका तोटा होतो. एका चेंडूची खरेदी किंमत किती आहे?)",
+  options: ["A) Rs. 45", "B) Rs. 50", "C) Rs. 60", "D) Rs. 70"],
+  ans: "C",
+  explanation: "Let CP of 1 ball be x. SP of 17 balls = 720. Loss = 5x. Loss = (CP of 17 balls) - (SP of 17 balls) => 5x = 17x - 720 => 12x = 720 => x = 60.\n(१ चेंडूची खरेदी किंमत 'x' मानू. १७ चेंडूंची विक्री किंमत = ७२०. तोटा = ५x. तोटा = (१७ चेंडूंची खरेदी किंमत) - (१७ चेंडूंची विक्री किंमत) => ५x = १७x - ७२० => १२x = ७२० => x = ६०.)"
+},
+{
+  q: "A can finish a work in 18 days and B can do the same work in 15 days. B worked for 10 days and left the job. In how many days, A alone can finish the remaining work? (A एक काम १८ दिवसांत पूर्ण करू शकतो आणि B तेच काम १५ दिवसांत करू शकतो. B ने १० दिवस काम केले आणि काम सोडून दिले. A एकटा उरलेले काम किती दिवसांत पूर्ण करेल?)",
+  options: ["A) 5 days", "B) 6 days", "C) 7.5 days", "D) 8 days"],
+  ans: "B",
+  explanation: "B's 1-day work = 1/15. B worked for 10 days = 10 * (1/15) = 10/15 = 2/3 work done. Remaining work = 1 - 2/3 = 1/3. A's 1-day work = 1/18. Time taken by A for 1/3 work = (1/3) / (1/18) = (1/3) * 18 = 6 days.\n(B चे १ दिवसाचे काम = १/१५. B ने १० दिवस काम केले = १० * (१/१५) = २/३ काम पूर्ण झाले. उरलेले काम = १ - २/३ = १/३. A चे १ दिवसाचे काम = १/१८. A ला १/३ काम पूर्ण करण्यासाठी लागणारा वेळ = (१/३) / (१/१८) = ६ दिवस.)"
+},
+{
+  q: "If a person walks at 14 km/hr instead of 10 km/hr, he would have walked 20 km more. The actual distance travelled by him is: (जर एखादी व्यक्ती १० किमी/तास ऐवजी १४ किमी/तास वेगाने चालली असती, तर ती २० किमी जास्त चालली असती. त्याने प्रत्यक्षात कापलेले अंतर किती आहे?)",
+  options: ["A) 50 km", "B) 60 km", "C) 70 km", "D) 80 km"],
+  ans: "A",
+  explanation: "Let the time travelled be 't' hours. According to the problem, the difference in distance is 20 km for the same time. So, (14 * t) - (10 * t) = 20 => 4t = 20 => t = 5 hours. The actual distance travelled by him (at 10 km/hr) = 10 * 5 = 50 km.\n(वेळ 't' तास मानू. प्रश्नानुसार, एकाच वेळेत अंतरातील फरक २० किमी आहे. त्यामुळे, (१४ * t) - (१० * t) = २० => ४t = २० => t = ५ तास. त्याने प्रत्यक्षात कापलेले अंतर (१० किमी/तास वेगाने) = १० * ५ = ५० किमी.)"
+},
+{
+  q: "A train running at the speed of 60 km/hr crosses a pole in 9 seconds. What is the length of the train? (६० किमी/तास वेगाने धावणारी एक ट्रेन एका खांबाला ९ सेकंदात ओलांडते. ट्रेनची लांबी किती आहे?)",
+  options: ["A) 120 meters", "B) 150 meters", "C) 180 meters", "D) 200 meters"],
+  ans: "B",
+  explanation: "First, convert speed from km/hr to m/s: 60 km/hr = 60 * (5/18) m/s = 100/3 m/s = 50/3 m/s. When a train crosses a pole, the distance covered is equal to the length of the train. Length of train = Speed × Time = (50/3 m/s) × 9 s = 50 × 3 = 150 meters.\n(प्रथम, वेग किमी/तास वरून मी/से मध्ये रूपांतरित करा: ६० किमी/तास = ६० * (५/१८) मी/से = ५०/३ मी/से. जेव्हा एक ट्रेन खांबाला ओलांडते, तेव्हा कापलेले अंतर ट्रेनच्या लांबीइतके असते. ट्रेनची लांबी = वेग × वेळ = (५०/३ मी/से) × ९ से = १५० मीटर.)"
+},
+{
+  q: "There is 60% increase in an amount in 6 years at simple interest. What will be the compound interest of Rs. 12,000 after 3 years at the same rate? (एका रकमेत ६ वर्षांत सरळ व्याजाने ६०% वाढ होते. त्याच दराने १२,००० रुपयांचे ३ वर्षांनंतरचे चक्रवाढ व्याज किती असेल?)",
+  options: ["A) Rs. 3972", "B) Rs. 3600", "C) Rs. 3800", "D) Rs. 4000"],
+  ans: "A",
+  explanation: "For simple interest, 60% increase in 6 years means the rate of interest (R) = (60% / 6 years) = 10% per annum. Now, calculate Compound Interest (CI) for Rs. 12,000 at 10% for 3 years: Amount (A) = P * (1 + R/100)^T = 12000 * (1 + 10/100)^3 = 12000 * (1.1)^3 = 12000 * 1.331 = 15972. Compound Interest = A - P = 15972 - 12000 = 3972.\n(सरळ व्याजासाठी, ६ वर्षांत ६०% वाढ म्हणजे व्याजाचा दर (R) = (६०% / ६ वर्षे) = १०% प्रति वर्ष. आता, १२,००० रुपयांवर १०% दराने ३ वर्षांसाठी चक्रवाढ व्याज (CI) मोजा: रक्कम (A) = P * (१ + R/१००)^T = १२००० * (१ + १०/१००)^३ = १२००० * (१.१)^३ = १२००० * १.३३१ = १५९७२. चक्रवाढ व्याज = A - P = १५९७२ - १२००० = ३९७२.)"
+},
+{
+  q: "A cylindrical tank has a radius of 7 meters and a height of 10 meters. What is its volume? (Use π = 22/7) (एका दंडगोलाकार टाकीची त्रिज्या ७ मीटर आणि उंची १० मीटर आहे. तिचे घनफळ किती आहे? (π = २२/७ वापरा))",
+  options: ["A) 1540 cubic meters", "B) 440 cubic meters", "C) 770 cubic meters", "D) 2200 cubic meters"],
+  ans: "A",
+  explanation: "The formula for the volume of a cylinder is V = π * r² * h. Given radius (r) = 7 meters and height (h) = 10 meters. V = (22/7) * 7² * 10 = (22/7) * 49 * 10 = 22 * 7 * 10 = 1540 cubic meters.\n(दंडगोलाच्या घनफळाचे सूत्र V = π * r² * h आहे. त्रिज्या (r) = ७ मीटर आणि उंची (h) = १० मीटर दिली आहे. V = (२२/७) * ७² * १० = (२२/७) * ४९ * १० = २२ * ७ * १० = १५४० घनमीटर.)"
+},
+{
+  q: "If the roots of the quadratic equation x² - 5x + 6 = 0 are α and β, what is the value of α² + β²? (जर वर्गसमीकरण x² - 5x + 6 = 0 ची मुळे α आणि β असतील, तर α² + β² ची किंमत काय आहे?)",
+  options: ["A) 13", "B) 25", "C) 1", "D) 10"],
+  ans: "A",
+  explanation: "For a quadratic equation ax² + bx + c = 0, sum of roots (α+β) = -b/a and product of roots (αβ) = c/a. For x² - 5x + 6 = 0, α+β = -(-5)/1 = 5, and αβ = 6/1 = 6. We know that α² + β² = (α+β)² - 2αβ. So, α² + β² = (5)² - 2*(6) = 25 - 12 = 13.\n(वर्गसमीकरण ax² + bx + c = ० साठी, मुळांची बेरीज (α+β) = -b/a आणि मुळांचा गुणाकार (αβ) = c/a असतो. x² - ५x + ६ = ० साठी, α+β = -(-५)/१ = ५, आणि αβ = ६/१ = ६. आपल्याला माहित आहे की α² + β² = (α+β)² - २αβ. म्हणून, α² + β² = (५)² - २*(६) = २५ - १२ = १३.)"
+},
+{
+  q: "A sequence is defined by a_n = 2n + 3. What is the sum of the first 5 terms of this sequence? (एक अनुक्रम a_n = 2n + 3 द्वारे परिभाषित केला आहे. या अनुक्रमाच्या पहिल्या ५ पदांची बेरीज किती आहे?)",
+  options: ["A) 45", "B) 50", "C) 55", "D) 60"],
+  ans: "A",
+  explanation: "The first 5 terms of the sequence are:\na1 = 2(1) + 3 = 5\na2 = 2(2) + 3 = 7\na3 = 2(3) + 3 = 9\na4 = 2(4) + 3 = 11\na5 = 2(5) + 3 = 13\nSum of the first 5 terms = 5 + 7 + 9 + 11 + 13 = 45.\n(अनुक्रमाची पहिली ५ पदे अशी आहेत:\na1 = २(१) + ३ = ५\na2 = २(२) + ३ = ७\na3 = २(३) + ३ = ९\na4 = २(४) + ३ = ११\na5 = २(५) + ३ = १३\nपहिल्या ५ पदांची बेरीज = ५ + ७ + ९ + ११ + १३ = ४५.)"
+},
 
 // General Knowledge (सामान्य ज्ञान)
-["Which one of the following is not a Union Territory of India? (खालीलपैकी कोणते भारताचे केंद्रशासित प्रदेश नाही?)", ["A) Lakshadweep (लक्षद्वीप)", "B) Puducherry (पुदुचेरी)", "C) Goa (गोवा)", "D) Ladakh (लडाख)"], "C"],
-["The Bhimbetka rock shelters are located in which Indian state? (भीमबेटका येथील रॉक शेल्टर (शैल आश्रय) कोणत्या भारतीय राज्यात आहेत?)", ["A) Madhya Pradesh (मध्य प्रदेश)", "B) Uttar Pradesh (उत्तर प्रदेश)", "C) Rajasthan (राजस्थान)", "D) Bihar (बिहार)"], "A"],
-["Who was the first woman Prime Minister of India? (भारताच्या पहिल्या महिला पंतप्रधान कोण होत्या?)", ["A) Pratibha Patil (प्रतिभा पाटील)", "B) Indira Gandhi (इंदिरा गांधी)", "C) Sonia Gandhi (सोनिया गांधी)", "D) Sushma Swaraj (सुषमा स्वराज)"], "B"],
-["The term 'Quarantine' became widely known during which global health crisis? ('क्वारंटाईन' हा शब्द कोणत्या जागतिक आरोग्य संकटादरम्यान मोठ्या प्रमाणावर प्रचलित झाला?)", ["A) SARS outbreak (SARS चा उद्रेक)", "B) H1N1 pandemic (H1N1 महामारी)", "C) COVID-19 pandemic (कोविड-१९ महामारी)", "D) Ebola outbreak (इबोलाचा उद्रेक)"], "C"],
-["Which Indian state has the longest coastline? (भारतातील कोणत्या राज्याला सर्वात लांब किनारपट्टी आहे?)", ["A) Maharashtra (महाराष्ट्र)", "B) Kerala (केरळ)", "C) Gujarat (गुजरात)", "D) Tamil Nadu (तामिळनाडू)"], "C"],
+{
+  q: "Which Indian state recently launched the 'Mukhya Mantri Ladli Behna Yojana' to empower women? (कोणत्या भारतीय राज्याने नुकतीच महिला सक्षमीकरणासाठी 'मुख्यमंत्री लाडली बहना योजना' सुरू केली?)",
+  options: ["A) Uttar Pradesh (उत्तर प्रदेश)", "B) Madhya Pradesh (मध्य प्रदेश)", "C) Rajasthan (राजस्थान)", "D) Bihar (बिहार)"],
+  ans: "B",
+  explanation: "The 'Mukhya Mantri Ladli Behna Yojana' is a welfare scheme launched by the government of Madhya Pradesh to provide financial assistance to eligible women in the state.\n('मुख्यमंत्री लाडली बहना योजना' ही मध्य प्रदेश सरकारने राज्यातील पात्र महिलांना आर्थिक मदत देण्यासाठी सुरू केलेली कल्याणकारी योजना आहे.)"
+},
+{
+  q: "Who is the current Chief of Defence Staff (CDS) of India (as of July 2025)? (भारताचे सध्याचे चीफ ऑफ डिफेन्स स्टाफ (CDS) कोण आहेत (जुलै २०२५ नुसार)?)",
+  options: ["A) General Manoj Pande (जनरल मनोज पांडे)", "B) General Anil Chauhan (जनरल अनिल चौहान)", "C) Admiral R. Hari Kumar (ॲडमिरल आर. हरी कुमार)", "D) Air Chief Marshal V.R. Chaudhari (एअर चीफ मार्शल व्ही.आर. चौधरी)"],
+  ans: "B",
+  explanation: "General Anil Chauhan assumed office as the second Chief of Defence Staff (CDS) of India on September 30, 2022, and is currently serving in that position.\n(जनरल अनिल चौहान यांनी ३० सप्टेंबर २०२२ रोजी भारताचे दुसरे चीफ ऑफ डिफेन्स स्टाफ (CDS) म्हणून पदभार स्वीकारला आणि ते सध्या त्याच पदावर कार्यरत आहेत.)"
+},
+{
+  q: "The 'PM Gati Shakti National Master Plan' is primarily aimed at: ('पीएम गति शक्ती राष्ट्रीय मास्टर प्लॅन' मुख्यतः कशासाठी आहे?)",
+  options: ["A) Promoting digital literacy (डिजिटल साक्षरतेला प्रोत्साहन देणे)", "B) Integrated planning and coordinated implementation of infrastructure connectivity projects (पायाभूत सुविधा कनेक्टिव्हिटी प्रकल्पांचे एकात्मिक नियोजन आणि समन्वित अंमलबजावणी)", "C) Providing housing for all (सर्वांसाठी घरे उपलब्ध करून देणे)", "D) Boosting agricultural production (कृषी उत्पादन वाढवणे)"],
+  ans: "B",
+  explanation: "PM Gati Shakti is a national master plan launched by the Indian government for multi-modal connectivity infrastructure development, aiming for integrated planning and coordinated implementation to reduce logistics costs and boost economic growth.\n(पीएम गति शक्ती ही भारत सरकारने बहु-मॉडेल कनेक्टिव्हिटी पायाभूत सुविधांच्या विकासासाठी सुरू केलेली एक राष्ट्रीय मास्टर योजना आहे, ज्याचा उद्देश लॉजिस्टिक्स खर्च कमी करण्यासाठी आणि आर्थिक वाढीला चालना देण्यासाठी एकात्मिक नियोजन आणि समन्वित अंमलबजावणी आहे.)"
+},
+{
+  q: "Which city is known as the 'Silicon Valley of India'? (कोणते शहर 'भारताची सिलिकॉन व्हॅली' म्हणून ओळखले जाते?)",
+  options: ["A) Hyderabad (हैदराबाद)", "B) Chennai (चेन्नई)", "C) Bengaluru (बंगळूरु)", "D) Pune (पुणे)"],
+  ans: "C",
+  explanation: "Bengaluru is widely known as the 'Silicon Valley of India' due to its role as the country's leading information technology (IT) exporter and a hub for numerous IT companies and startups.\n(बंगळूरु हे भारतातील माहिती तंत्रज्ञान (IT) निर्यातीचे प्रमुख केंद्र आणि अनेक IT कंपन्या व स्टार्टअप्सचे केंद्र असल्यामुळे 'भारताची सिलिकॉन व्हॅली' म्हणून ओळखले जाते.)"
+},
+{
+  q: "The 'International Solar Alliance (ISA)' was jointly launched by India and which other country? ('आंतरराष्ट्रीय सौर आघाडी (ISA)' भारत आणि कोणत्या दुसऱ्या देशाने संयुक्तपणे सुरू केली?)",
+  options: ["A) France (फ्रान्स)", "B) Germany (जर्मनी)", "C) USA (अमेरिका)", "D) UK (युनायटेड किंगडम)"],
+  ans: "A",
+  explanation: "The International Solar Alliance (ISA) was conceived as a joint effort by India and France to mobilize efforts towards the deployment of solar energy.\n(आंतरराष्ट्रीय सौर आघाडी (ISA) ही सौर ऊर्जेच्या वापरासाठी प्रयत्न एकत्र आणण्यासाठी भारत आणि फ्रान्स यांनी संयुक्तपणे सुरू केलेली संकल्पना आहे.)"
+},
 
 // Reasoning and Analytical Skills (तर्क आणि विश्लेषणात्मक कौशल्ये)
-["If 'TABLE' is coded as '201215', and 'CHAIR' is coded as '381918', how will 'BENCH' be coded? (A=1, B=2...) (जर 'TABLE' चा कोड '201215' आणि 'CHAIR' चा कोड '381918' असेल, तर 'BENCH' चा कोड काय असेल? (A=1, B=2...))", ["A) 251438", "B) 2514308", "C) 2514038", "D) 2514083"], "A"],
-["Find the missing number: 2, 6, 12, 20, 30, ___. (गहाळ संख्या शोधा: २, ६, १२, २०, ३०, ___.)", ["A) 40", "B) 42", "C) 44", "D) 38"], "B"],
-["Statement: All trees are plants. Some plants are green. Conclusion I: Some trees are green. Conclusion II: All green are plants. (विधान: सर्व झाडे वनस्पती आहेत. काही वनस्पती हिरव्या आहेत. निष्कर्ष I: काही झाडे हिरवी आहेत. निष्कर्ष II: सर्व हिरवे वनस्पती आहेत.)", ["A) Only Conclusion I follows (फक्त निष्कर्ष I अनुसरण करतो)", "B) Only Conclusion II follows (फक्त निष्कर्ष II अनुसरण करतो)", "C) Both I and II follow (I आणि II दोन्ही अनुसरण करतात)", "D) Neither I nor II follows (I किंवा II दोन्ही अनुसरण करत नाहीत)"], "D"],
-["If 'BROTHER' is related to 'SISTER', then 'UNCLE' is related to: (जर 'BROTHER' चा संबंध 'SISTER' शी आहे, तर 'UNCLE' चा संबंध कशाशी आहे:)", ["A) Cousin (चुलत भाऊ/बहीण)", "B) Nephew (भाचा/पुतण्या)", "C) Aunt (मावशी/काकू/आत्या)", "D) Son (मुलगा)"], "C"],
-["Rearrange the letters to form a meaningful word and identify the category it belongs to: 'NAPEL' (अक्षरांची पुनर्रचना करून एक अर्थपूर्ण शब्द तयार करा आणि तो कोणत्या श्रेणीत येतो ते ओळखा: 'NAPEL')", ["A) Planet (ग्रह)", "B) Animal (प्राणी)", "C) Fruit (फळ)", "D) Country (देश)"], "C"],
+{
+  q: "If 'SIMPLE' is coded as 'TJNQMF', how will 'EXAM' be coded? (जर 'SIMPLE' चा कोड 'TJNQMF' असेल, तर 'EXAM' चा कोड काय असेल?)",
+  options: ["A) FYBN", "B) FYAN", "C) GZBO", "D) EWZM"],
+  ans: "A",
+  explanation: "The pattern for 'SIMPLE' to 'TJNQMF' is that each letter is shifted forward by one position in the alphabet (+1). S->T, I->J, M->N, P->Q, L->M, E->F. Applying the same pattern to 'EXAM': E->F, X->Y, A->B, M->N. So, 'EXAM' will be coded as 'FYBN'.\n('SIMPLE' वरून 'TJNQMF' या कोडमधील नमुना असा आहे की, प्रत्येक अक्षर वर्णमालेत एका स्थानाने पुढे सरकते (+१). S->T, I->J, M->N, P->Q, L->M, E->F. 'EXAM' ला हाच नमुना लागू केल्यास: E->F, X->Y, A->B, M->N. म्हणून, 'EXAM' चा कोड 'FYBN' असेल.)"
+},
+{
+  q: "Find the missing term in the series: 2, 6, 12, 20, 30, ___. (मालिकेतील गहाळ पद शोधा: २, ६, १२, २०, ३०, ___.)",
+  options: ["A) 40", "B) 42", "C) 44", "D) 38"],
+  ans: "B",
+  explanation: "The pattern in the series is based on the difference between consecutive terms:\n6 - 2 = 4\n12 - 6 = 6\n20 - 12 = 8\n30 - 20 = 10\nThe differences are increasing by 2 each time (4, 6, 8, 10). So, the next difference should be 12. Therefore, the next term is 30 + 12 = 42.\n(या मालिकेतील नमुना सलग पदांमधील फरकावर आधारित आहे:\n६ - २ = ४\n१२ - ६ = ६\n२० - १२ = ८\n३० - २० = १०\nफरक प्रत्येक वेळी २ ने वाढत आहेत (४, ६, ८, १०). त्यामुळे, पुढील फरक १२ असावा. म्हणून, पुढील पद ३० + १२ = ४२.)"
+},
+{
+  q: "Statements: Some books are pens. All pens are pencils. Conclusion I: Some books are pencils. Conclusion II: No book is a pencil. (विधाने: काही पुस्तके पेन आहेत. सर्व पेन पेन्सिल आहेत. निष्कर्ष I: काही पुस्तके पेन्सिल आहेत. निष्कर्ष II: कोणतेही पुस्तक पेन्सिल नाही.)",
+  options: ["A) Only Conclusion I follows (फक्त निष्कर्ष I अनुसरण करतो)", "B) Only Conclusion II follows (फक्त निष्कर्ष II अनुसरण करतो)", "C) Both I and II follow (I आणि II दोन्ही अनुसरण करतात)", "D) Neither I nor II follows (I किंवा II दोन्ही अनुसरण करत नाहीत)"],
+  ans: "A",
+  explanation: "From Statement 2, 'All pens are pencils'. From Statement 1, 'Some books are pens'. Combining these, if some books are pens, and all pens are pencils, then it logically follows that 'Some books are pencils' (Conclusion I). Conclusion II ('No book is a pencil') directly contradicts Conclusion I and is not supported by the statements.\n(विधान २ वरून, 'सर्व पेन पेन्सिल आहेत'. विधान १ वरून, 'काही पुस्तके पेन आहेत'. या दोन्हींना एकत्र केल्यास, जर काही पुस्तके पेन असतील आणि सर्व पेन पेन्सिल असतील, तर 'काही पुस्तके पेन्सिल आहेत' (निष्कर्ष I) हे तार्किकरित्या सिद्ध होते. निष्कर्ष II ('कोणतेही पुस्तक पेन्सिल नाही') हा निष्कर्ष I शी थेट विसंगत आहे आणि विधानांद्वारे समर्थित नाही.)"
+},
+{
+  q: "A clock shows 4:30. If the minute hand points towards East, in which direction will the hour hand point? (एका घड्याळात ४:३० वाजले आहेत. जर मिनिट काटा पूर्वेकडे असेल, तर तास काटा कोणत्या दिशेला असेल?)",
+  options: ["A) North-East (ईशान्य)", "B) North-West (वायव्य)", "C) South-East (आग्नेय)", "D) South-West (नैऋत्य)"],
+  ans: "A",
+  explanation: "At 4:30, the minute hand is at 6 (pointing South in a standard clock face). If it points towards East, it means the clock face has been rotated 90 degrees clockwise (from South to East). The hour hand at 4:30 is between 4 and 5. In a standard clock, this would be between South-East and South (closer to South-East). If the clock is rotated 90 degrees clockwise, the hour hand which was initially pointing approximately South-East will now point towards North-East.\n(४:३० वाजता, मिनिट काटा ६ वाजता असतो (प्रमाणित घड्याळात दक्षिणेकडे). जर तो पूर्वेकडे असेल, तर याचा अर्थ घड्याळाची दिशा ९० अंशांनी घड्याळाच्या दिशेने (दक्षिणेकडून पूर्वेकडे) फिरवली आहे. ४:३० वाजता तास काटा ४ आणि ५ च्या दरम्यान असतो. प्रमाणित घड्याळात, तो आग्नेय आणि दक्षिणेच्या दरम्यान (आग्नेयच्या जवळ) असेल. जर घड्याळ ९० अंशांनी घड्याळाच्या दिशेने फिरवले, तर तास काटा जो आधी आग्नेय दिशेने होता तो आता ईशान्य दिशेकडे असेल.)"
+},
+{
+  q: "Complete the analogy: Architect : Building :: Sculptor : ? (सादृश्य पूर्ण करा: आर्किटेक्ट : इमारत :: शिल्पकार : ?)",
+  options: ["A) Statue (पुतळा)", "B) Painting (चित्रकला)", "C) Music (संगीत)", "D) Book (पुस्तक)"],
+  ans: "A",
+  explanation: "An Architect is a person who designs and supervises the construction of buildings. Similarly, a Sculptor is an artist who creates sculptures (statues) by carving or molding.\n(आर्किटेक्ट ही अशी व्यक्ती असते जी इमारतींची रचना करते आणि त्यांच्या बांधकामावर देखरेख ठेवते. त्याचप्रमाणे, शिल्पकार हा एक कलाकार असतो जो कोरीव काम किंवा मोल्डिंगद्वारे शिल्पे (पुतळे) तयार करतो.)"
+},
 
 // Computer Knowledge (संगणक ज्ञान)
-["Which of the following is volatile memory? (खालीलपैकी कोणती अस्थिर (volatile) मेमरी आहे?)", ["A) ROM (रोम)", "B) Hard Disk Drive (हार्ड डिस्क ड्राइव्ह)", "C) RAM (रॅम)", "D) Solid State Drive (सॉलिड स्टेट ड्राइव्ह)"], "C"],
-["What is the primary purpose of a firewall in a computer network? (संगणक नेटवर्कमध्ये फायरवॉलचा मुख्य उद्देश काय आहे?)", ["A) To speed up internet connection (इंटरनेट कनेक्शनचा वेग वाढवणे)", "B) To block unauthorized access (अनधिकृत प्रवेश रोखणे)", "C) To store large files (मोठ्या फाइल्स साठवणे)", "D) To create documents (दस्तऐवज तयार करणे)"], "B"],
-["Which of the following is an example of cloud storage service? (खालीलपैकी कोणते क्लाउड स्टोरेज सेवेचे उदाहरण आहे?)", ["A) Microsoft Word", "B) Google Drive", "C) Adobe Photoshop", "D) VLC Media Player"], "B"],
-["What is phishing? (फिशिंग म्हणजे काय?)", ["A) A type of online game (एक प्रकारचा ऑनलाइन गेम)", "B) An attempt to trick users into revealing personal information (वापरकर्त्यांना वैयक्तिक माहिती उघड करण्यास फसवण्याचा प्रयत्न)", "C) A method of secure data encryption (सुरक्षित डेटा एनक्रिप्शनची पद्धत)", "D) A network troubleshooting tool (नेटवर्क ट्रबलशूटिंग साधन)"], "B"],
-["Which of these is typically used for creating and managing databases? (डेटाबेस तयार करण्यासाठी आणि व्यवस्थापित करण्यासाठी सामान्यतः कशाचा वापर केला जातो?)", ["A) MS PowerPoint", "B) MS Excel", "C) MS Access", "D) MS Word"], "C"]
+{
+  q: "Which of the following is a common method used by cybercriminals to steal sensitive information by disguising as a trustworthy entity in an electronic communication? (इलेक्ट्रॉनिक संप्रेषणामध्ये विश्वासार्ह संस्था म्हणून वेश धारण करून सायबर गुन्हेगार संवेदनशील माहिती चोरण्यासाठी वापरली जाणारी सामान्य पद्धत कोणती आहे?)",
+  options: ["A) Firewall (फायरवॉल)", "B) Phishing (फिशिंग)", "C) Antivirus (अँटीव्हायरस)", "D) Encryption (एनक्रिप्शन)"],
+  ans: "B",
+  explanation: "Phishing is a cybercrime where attackers attempt to trick individuals into revealing sensitive information, such as usernames, passwords, and credit card details, by masquerading as a legitimate entity in electronic communications.\n(फिशिंग हा एक सायबर गुन्हा आहे जिथे हल्लेखोर इलेक्ट्रॉनिक संप्रेषणामध्ये कायदेशीर संस्थेचा वेष धारण करून वापरकर्त्यांना वापरकर्तानाव, पासवर्ड आणि क्रेडिट कार्ड तपशील यासारखी संवेदनशील माहिती उघड करण्यास फसवण्याचा प्रयत्न करतात.)"
+},
+{
+  q: "What is the purpose of 'cookies' in web Browse? (वेब ब्राउझिंगमध्ये 'कुकीज' चा उद्देश काय आहे?)",
+  options: ["A) To store user preferences and track Browse activity (वापरकर्त्याच्या पसंती साठवण्यासाठी आणि ब्राउझिंग क्रियाकलाप ट्रॅक करण्यासाठी)", "B) To speed up internet connection (इंटरनेट कनेक्शनचा वेग वाढवण्यासाठी)", "C) To block pop-up ads (पॉप-अप जाहिराती ब्लॉक करण्यासाठी)", "D) To protect against viruses (व्हायरसपासून संरक्षण करण्यासाठी)"],
+  ans: "A",
+  explanation: "Cookies are small pieces of data stored on a user's computer by the web browser while Browse a website. They are used to remember stateful information (like items in a shopping cart), record the user's Browse activity, and remember login information or user preferences.\n(कुकीज हे वापरकर्त्याच्या संगणकावर वेब ब्राउझरद्वारे वेबसाइट ब्राउझ करताना साठवलेले लहान डेटाचे तुकडे असतात. ते स्थितीपूर्ण माहिती (जसे की शॉपिंग कार्टमधील वस्तू) लक्षात ठेवण्यासाठी, वापरकर्त्याची ब्राउझिंग क्रियाकलाप रेकॉर्ड करण्यासाठी आणि लॉगिन माहिती किंवा वापरकर्त्याच्या पसंती लक्षात ठेवण्यासाठी वापरले जातात.)"
+},
+{
+  q: "Which of the following is a type of software that allows users to perform specific tasks, such as word processing, spreadsheets, or presentations? (खालीलपैकी कोणता सॉफ्टवेअरचा प्रकार आहे जो वापरकर्त्यांना विशिष्ट कार्ये करण्यास अनुमती देतो, जसे की वर्ड प्रोसेसिंग, स्प्रेडशीट किंवा प्रेझेंटेशन्स?)",
+  options: ["A) Operating System (ऑपरेटिंग सिस्टम)", "B) Utility Software (युटिलिटी सॉफ्टवेअर)", "C) Application Software (ॲप्लिकेशन सॉफ्टवेअर)", "D) System Software (सिस्टम सॉफ्टवेअर)"],
+  ans: "C",
+  explanation: "Application software (or an application) is a computer program designed to perform a specific task or a set of tasks for the end-user. Word processors, spreadsheets, and presentation software are all examples of application software.\n(ॲप्लिकेशन सॉफ्टवेअर (किंवा ॲप्लिकेशन) हा एक संगणक प्रोग्राम आहे जो अंतिम वापरकर्त्यासाठी विशिष्ट कार्य किंवा कार्यांचा संच करण्यासाठी डिझाइन केलेला आहे. वर्ड प्रोसेसर, स्प्रेडशीट आणि प्रेझेंटेशन सॉफ्टवेअर ही सर्व ॲप्लिकेशन सॉफ्टवेअरची उदाहरणे आहेत.)"
+},
+{
+  q: "What is the full form of 'URL' in the context of the internet? (इंटरनेटच्या संदर्भात 'URL' चे पूर्ण रूप काय आहे?)",
+  options: ["A) Universal Resource Link (युनिव्हर्सल रिसोर्स लिंक)", "B) Uniform Resource Locator (युनिफॉर्म रिसोर्स लोकेटर)", "C) Unified Remote Link (युनिफाइड रिमोट लिंक)", "D) User Response Logic (यूझर रिस्पॉन्स लॉजिक)"],
+  ans: "B",
+  explanation: "URL stands for Uniform Resource Locator. It is the address of a given unique resource on the World Wide Web.\n(URL चे पूर्ण रूप युनिफॉर्म रिसोर्स लोकेटर आहे. हे वर्ल्ड वाईड वेबवरील दिलेल्या अद्वितीय संसाधनाचे पत्ता आहे.)"
+},
+{
+  q: "Which of these is a programming language commonly used for data analysis and machine learning? (खालीलपैकी कोणती प्रोग्रामिंग भाषा डेटा विश्लेषण आणि मशीन लर्निंगसाठी सामान्यतः वापरली जाते?)",
+  options: ["A) HTML", "B) CSS", "C) Python", "D) SQL"],
+  ans: "C",
+  explanation: "Python is a very popular programming language known for its simplicity and extensive libraries, making it widely used in data analysis, machine learning, artificial intelligence, and web development.\n(पायथन ही एक अतिशय लोकप्रिय प्रोग्रामिंग भाषा आहे जी तिच्या साधेपणासाठी आणि विस्तृत लायब्ररींसाठी ओळखली जाते, ज्यामुळे ती डेटा विश्लेषण, मशीन लर्निंग, कृत्रिम बुद्धिमत्ता आणि वेब विकासासाठी मोठ्या प्रमाणावर वापरली जाते.)"
+}
 ];
 
 const form = document.getElementById('quizForm');
@@ -74,16 +248,16 @@ const form = document.getElementById('quizForm');
 questions.forEach((q, i) => {
   const div = document.createElement('div');
   div.className = "question-block";
-  div.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q[0]}</p>`;
-  q[1].forEach((opt, j) => {
+  div.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q.q}</p>`;
+  q.options.forEach((opt, j) => {
     const optLabel = String.fromCharCode(65 + j);
     div.innerHTML += `
       <label class="option">
-        <input type="radio" name="q${i}" value="${optLabel}"> ${optLabel}) ${opt}
+        <input type="radio" name="q${i}" value="${optLabel}"> ${opt}
       </label>
     `;
   });
-  div.innerHTML += `<input type="hidden" id="ans${i}" value="${q[2]}">`;
+  div.innerHTML += `<div class="explanation" id="exp${i}"></div>`; // Placeholder for explanation
   form.appendChild(div);
 });
 
@@ -91,26 +265,47 @@ questions.forEach((q, i) => {
 document.getElementById('submitBtn').onclick = function() {
   let score = 0;
   for (let i = 0; i < questions.length; i++) {
-    const correct = document.getElementById('ans' + i).value;
-    const selected = document.querySelector('input[name="q' + i + '"]:checked');
-    const options = document.getElementsByName('q' + i);
-    options.forEach(o => o.parentElement.classList.remove('correct', 'incorrect'));
+    const qData = questions[i];
+    const correctAns = qData.ans;
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    const options = document.getElementsByName(`q${i}`);
+    const explanationDiv = document.getElementById(`exp${i}`);
+    
+    // Reset styling
+    options.forEach(o => {
+      o.parentElement.classList.remove('correct', 'incorrect');
+      o.disabled = true; // Disable options after submission
+    });
+
+    // Determine correct option text for display
+    let correctOptionText = '';
+    qData.options.forEach(opt => {
+        if (opt.startsWith(`${correctAns})`)) {
+            correctOptionText = opt;
+        }
+    });
+
     if (selected) {
-      if (selected.value === correct) {
+      if (selected.value === correctAns) {
         selected.parentElement.classList.add('correct');
         score++;
       } else {
         selected.parentElement.classList.add('incorrect');
+        // Highlight correct answer if user was wrong
         options.forEach(o => {
-          if (o.value === correct) o.parentElement.classList.add('correct');
+          if (o.value === correctAns) o.parentElement.classList.add('correct');
         });
       }
     } else {
-      // जर कोणतेही उत्तर निवडले नसेल तर योग्य उत्तर दाखवा
+      // If no answer selected, just highlight the correct one
       options.forEach(o => {
-        if (o.value === correct) o.parentElement.classList.add('correct');
+        if (o.value === correctAns) o.parentElement.classList.add('correct');
       });
     }
+
+    // Show explanation
+    explanationDiv.innerHTML = `**Correct Answer:** <span class="correct-option-text">${correctOptionText}</span><br>${qData.explanation}`;
+    explanationDiv.classList.add('show');
   }
   document.getElementById('result').innerText = `✅ तुमचा निकाल: ${score} / ${questions.length}`;
 };
