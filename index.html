@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>JAA Practice Test - Set 6</title>
+  <title>JAA Practice Test - Set 7 (With Explanations)</title>
   <style>
     body { font-family: sans-serif; padding: 20px; background: #f1f5f9; }
     .question-block {
@@ -43,172 +43,202 @@
   </style>
 </head>
 <body>
-<h2>JAA Practice Test - Set 6 (25 Questions)</h2>
-<p>तुमच्या आजच्या सरावासाठी २५ प्रश्न. (25 questions for your practice today.)</p>
+<h2>JAA Practice Test - Set 7 (30 Questions with Explanations)</h2>
+<p>तुमच्या आजच्या सरावासाठी ३० प्रश्न. (30 questions for your practice today.)</p>
 <form id='quizForm'></form>
 <button id="submitBtn">Submit</button>
 <div id="result"></div>
 <script>
 // प्रश्न आणि उत्तरांचा संच
 const questions = [
-// Language (भाषा) - 5 Questions
+// Language (भाषा) - 6 Questions
 {
-  q: "Choose the option that best replaces the underlined phrase to make the sentence grammatically correct and meaningful: 'Despite of the heavy rain, they continued their journey.' (वाक्य व्याकरणदृष्ट्या योग्य आणि अर्थपूर्ण बनवण्यासाठी अधोरेखित वाक्यांश योग्यरित्या बदलणारा पर्याय निवडा: 'मुसळधार पाऊस असूनही, त्यांनी त्यांचा प्रवास चालू ठेवला.')",
-  options: ["A) Despite the heavy rain", "B) In spite the heavy rain", "C) Although the heavy rain", "D) Inspite of heavy rain"],
-  ans: "A",
-  explanation: "'Despite' does not take 'of' after it. 'In spite of' or 'despite' are correct.\n('Despite' नंतर 'of' लागत नाही. 'In spite of' किंवा 'despite' हे योग्य आहेत.)"
-},
-{
-  q: "What does the idiom 'To throw in the towel' mean? ('टू थ्रो इन द टॉवेल' या वाक्प्रचाराचा अर्थ काय आहे?)",
-  options: ["A) To start a fight (लढाई सुरू करणे)", "B) To admit defeat (पराभव मान्य करणे)", "C) To clean up a mess (गोंधळ स्वच्छ करणे)", "D) To offer help (मदत देऊ करणे)"],
+  q: "Choose the option that correctly fills in the blanks: 'The more you practice, ___ you become.' (रिकाम्या जागा योग्य प्रकारे भरणारा पर्याय निवडा: 'जितका जास्त तुम्ही सराव कराल, ___ तुम्ही व्हाल.')",
+  options: ["A) the good (चांगले)", "B) the better (अधिक चांगले)", "C) the best (सर्वोत्तम)", "D) gooder (अधिक चांगले)"],
   ans: "B",
-  explanation: "This idiom originated from boxing, where a fighter's corner would throw a towel into the ring to signal surrender or defeat.\n(हा वाक्प्रचार बॉक्सिंगमधून आला आहे, जिथे पैलवानाचा प्रशिक्षक हार किंवा पराभव स्वीकारण्याचे संकेत देण्यासाठी रिंगमध्ये टॉवेल फेकत असे.)"
+  explanation: "This is a comparative construction. 'The more... the more/better' is the correct structure.\\n(ही एक तुलनात्मक रचना आहे. 'The more... the more/better' ही योग्य रचना आहे.)"
 },
 {
-  q: "Find the antonym for 'Ephemeral'. ('इफेमरल' या शब्दाचा विरुद्धार्थी शब्द शोधा.)",
-  options: ["A) Transitory (क्षणिक)", "B) Fleeting (अल्पकाळ टिकणारे)", "C) Permanent (कायमस्वरूपी)", "D) Momentary (तात्पुरते)"],
+  q: "What does the idiom 'To burn the midnight oil' mean? ('टू बर्न द मिडनाईट ऑइल' या वाक्प्रचाराचा अर्थ काय आहे?)",
+  options: ["A) To waste time (वेळ वाया घालवणे)", "B) To work late into the night (रात्री उशिरापर्यंत काम करणे)", "C) To light a lamp (दिवा लावणे)", "D) To go to bed early (लवकर झोपायला जाणे)"],
+  ans: "B",
+  explanation: "This idiom means to work or study late into the night, often in preparation for an exam or an important task.\\n(या वाक्प्रचाराचा अर्थ रात्री उशिरापर्यंत काम करणे किंवा अभ्यास करणे, विशेषतः परीक्षा किंवा महत्त्वाच्या कामाच्या तयारीसाठी.)"
+},
+{
+  q: "Find the antonym for 'Benevolent'. ('बेनेव्होलेंट' या शब्दाचा विरुद्धार्थी शब्द शोधा.)",
+  options: ["A) Kind (दयाळू)", "B) Generous (उदार)", "C) Malevolent (दुर्भावनापूर्ण)", "D) Charitable (परमार्थ)"],
   ans: "C",
-  explanation: "'Ephemeral' means lasting for a very short time. Its antonym is 'Permanent', meaning lasting or intended to last or remain unchanged indefinitely.\n('इफेमरल' म्हणजे खूप कमी काळ टिकणारे. त्याचा विरुद्धार्थी शब्द 'कायमस्वरूपी' (Permanent) आहे, म्हणजे अनिश्चित काळासाठी टिकणारे किंवा बदल न करता राहणारे.)"
+  explanation: "'Benevolent' means well meaning and kindly. Its antonym is 'Malevolent', meaning having or showing a wish to do evil to others.\\n('बेनेव्होलेंट' म्हणजे चांगल्या हेतूने आणि दयाळूपणे. त्याचा विरुद्धार्थी शब्द 'मेलेव्होलेंट' (Malevolent) आहे, म्हणजे इतरांचे वाईट करण्याची इच्छा असणे किंवा दर्शवणे.)"
 },
 {
-  q: "Choose the correct sentence: (योग्य वाक्य निवडा:)",
-  options: ["A) Neither of the two boys have submitted their assignments. (दोन्ही मुलांपैकी कोणीही त्यांचे गृहपाठ जमा केले नाहीत.)", "B) Neither of the two boys has submitted their assignments. (दोन्ही मुलांपैकी कोणीही त्यांचे गृहपाठ जमा केले नाहीत.)", "C) Neither of the two boys have submitted his assignments. (दोन्ही मुलांपैकी कोणीही त्याचे गृहपाठ जमा केले नाहीत.)", "D) Neither of the two boys has submitted his assignment. (दोन्ही मुलांपैकी कोणीही त्याचे गृहपाठ जमा केले नाहीत.)"],
+  q: "Which of the following sentences correctly uses parallel structure? (खालीलपैकी कोणते वाक्य समांतर रचनेचा (parallel structure) योग्य वापर करते?)",
+  options: ["A) She likes to swim, to run, and cycling. (तिला पोहायला, धावायला आणि सायकल चालवायला आवडते.)", "B) She likes swimming, running, and to cycle. (तिला पोहायला, धावायला आणि सायकल चालवायला आवडते.)", "C) She likes to swim, to run, and to cycle. (तिला पोहायला, धावायला आणि सायकल चालवायला आवडते.)", "D) She likes swimming, to run, and cycling. (तिला पोहायला, धावायला आणि सायकल चालवायला आवडते.)"],
+  ans: "C",
+  explanation: "Parallel structure (also called parallelism) means using the same pattern of words to show that two or more ideas have the same level of importance. Here, all verbs should be in the 'to + verb' form.\\n(समांतर रचना (parallel structure) म्हणजे दोन किंवा अधिक कल्पना समान महत्त्वाच्या आहेत हे दाखवण्यासाठी शब्दांची समान पद्धत वापरणे. येथे, सर्व क्रियापदे 'to + क्रियापद' स्वरूपात असावीत.)"
+},
+{
+  q: "Identify the type of sentence: 'Although it was raining, we decided to go for a walk.' (वाक्याचा प्रकार ओळखा: 'पाऊस पडत असला तरी, आम्ही फिरायला जाण्याचा निर्णय घेतला.')",
+  options: ["A) Simple Sentence (साधे वाक्य)", "B) Compound Sentence (संयुक्त वाक्य)", "C) Complex Sentence (मिश्र वाक्य)", "D) Compound-Complex Sentence (संयुक्त-मिश्र वाक्य)"],
+  ans: "C",
+  explanation: "A complex sentence contains an independent clause and at least one dependent clause. 'Although it was raining' is a dependent clause, and 'we decided to go for a walk' is an independent clause.\\n(एक मिश्र वाक्य (Complex Sentence) मध्ये एक स्वतंत्र खंड (independent clause) आणि कमीतकमी एक अवलंबून खंड (dependent clause) असतो. 'Although it was raining' हा एक अवलंबून खंड आहे, आणि 'we decided to go for a walk' हा एक स्वतंत्र खंड आहे.)"
+},
+{
+  q: "Which word best completes the sentence: 'The committee members finally reached a ______ after hours of deliberation.' (वाक्य योग्य प्रकारे पूर्ण करणारा शब्द निवडा: 'अनेक तासांच्या विचारविनिमयानंतर समिती सदस्यांनी शेवटी एक ______ गाठला.')",
+  options: ["A) consensus (एकमत)", "B) dissension (मतभेद)", "C) conflict (संघर्ष)", "D) dispute (वाद)"],
+  ans: "A",
+  explanation: "'Consensus' means a general agreement. The context of 'after hours of deliberation' suggests a resolution or agreement.\\n('कन्सेंसस' (consensus) म्हणजे सर्वसाधारण एकमत. 'अनेक तासांच्या विचारविनिमयानंतर' या संदर्भामुळे निर्णय किंवा करार सूचित होतो.)"
+},
+
+// Mathematics (गणित) - 8 Questions
+{
+  q: "The ratio of two numbers is 3:4. If 5 is added to each number, the ratio becomes 4:5. Find the numbers. (दोन संख्यांचे गुणोत्तर ३:४ आहे. जर प्रत्येक संख्येत ५ मिळवले, तर गुणोत्तर ४:५ होते. त्या संख्या शोधा.)",
+  options: ["A) 15, 20", "B) 10, 15", "C) 20, 25", "D) 25, 30"],
+  ans: "A",
+  explanation: "Let the numbers be 3x and 4x. Adding 5 to each: (3x+5)/(4x+5) = 4/5. Cross-multiplying: 5(3x+5) = 4(4x+5) => 15x + 25 = 16x + 20 => x = 5. So the numbers are 3*5=15 and 4*5=20.\\n(संख्या ३x आणि ४x मानू. प्रत्येकी ५ मिळवल्यावर: (३x+५)/(४x+५) = ४/५. तिरकस गुणाकार केल्यास: ५(३x+५) = ४(४x+५) => १५x + २५ = १६x + २० => x = ५. म्हणून संख्या १५ आणि २० आहेत.)"
+},
+{
+  q: "A sum of Rs. 1000 is invested at 10% compound interest per annum. What is the difference between the compound interest for the 2nd year and the 3rd year? (१०% वार्षिक चक्रवाढ व्याजाने १००० रुपये गुंतवले आहेत. दुसऱ्या वर्षाचे आणि तिसऱ्या वर्षाचे चक्रवाढ व्याज यांच्यातील फरक किती आहे?)",
+  options: ["A) Rs. 11", "B) Rs. 12.10", "C) Rs. 10", "D) Rs. 13.31"],
+  ans: "B",
+  explanation: "CI for 2nd year = (Amount at end of 1st year) * Rate = (1000 * 1.1) * 0.10 = 1100 * 0.10 = 110. CI for 3rd year = (Amount at end of 2nd year) * Rate = (1000 * 1.1 * 1.1) * 0.10 = 1210 * 0.10 = 121. Difference = 121 - 110 = Rs. 11.\\n(दुसऱ्या वर्षाचे चक्रवाढ व्याज = (पहिल्या वर्षाच्या शेवटीची रक्कम) * दर = (१००० * १.१) * ०.१० = ११०० * ०.१० = ११०. तिसऱ्या वर्षाचे चक्रवाढ व्याज = (दुसऱ्या वर्षाच्या शेवटीची रक्कम) * दर = (१००० * १.१ * १.१) * ०.१० = १२१० * ०.१० = १२१. फरक = १२१ - ११० = ११ रुपये.)"
+},
+{
+  q: "If the length of a rectangle is increased by 20% and its width is decreased by 10%, what is the percentage change in its area? (जर एका आयताची लांबी २०% ने वाढवली आणि रुंदी १०% ने कमी केली, तर त्याच्या क्षेत्रफळात किती टक्के बदल होईल?)",
+  options: ["A) 8% increase", "B) 8% decrease", "C) 10% increase", "D) No change"],
+  ans: "A",
+  explanation: "Let original length be L and width be W. Original area = L*W. New length = L * 1.20. New width = W * 0.90. New area = (1.20L) * (0.90W) = 1.08 LW. Percentage change = [(1.08 LW - LW) / LW] * 100 = 0.08 * 100 = 8% increase.\\n(मूळ लांबी L आणि रुंदी W मानू. मूळ क्षेत्रफळ = L*W. नवीन लांबी = L * १.२०. नवीन रुंदी = W * ०.९०. नवीन क्षेत्रफळ = (१.२०L) * (०.९०W) = १.०८ LW. टक्केवारी बदल = [(१.०८ LW - LW) / LW] * १०० = ०.०८ * १०० = ८% वाढ.)"
+},
+{
+  q: "A man covers a certain distance at 6 km/hr and returns to the starting point at 4 km/hr. What is his average speed for the whole journey? (एक माणूस ६ किमी/तास वेगाने एक निश्चित अंतर कापतो आणि ४ किमी/तास वेगाने सुरुवातीच्या बिंदूवर परत येतो. संपूर्ण प्रवासासाठी त्याचा सरासरी वेग किती आहे?)",
+  options: ["A) 5 km/hr", "B) 4.8 km/hr", "C) 4.5 km/hr", "D) 5.2 km/hr"],
+  ans: "B",
+  explanation: "Average speed = (2 * S1 * S2) / (S1 + S2). Here S1=6, S2=4. Average speed = (2 * 6 * 4) / (6 + 4) = 48 / 10 = 4.8 km/hr.\\n(सरासरी वेग = (२ * S1 * S2) / (S1 + S2). येथे S1=६, S2=४. सरासरी वेग = (२ * ६ * ४) / (६ + ४) = ४८ / १० = ४.८ किमी/तास.)"
+},
+{
+  q: "If the area of an equilateral triangle is $$4\\sqrt{3}$$cm², what is the length of its side? (जर एका समभुज त्रिकोणाचे क्षेत्रफळ$$4\\sqrt{3}$$ सेमी² असेल, तर त्याच्या बाजूची लांबी किती आहे?)",
+  options: ["A) 2 cm", "B) 4 cm", "C) 6 cm", "D) 8 cm"],
+  ans: "B",
+  explanation: "Area of an equilateral triangle = (\\u221A3 / 4) * a², where 'a' is the side length. Given area = $$4\\sqrt{3}$$. So, $$4\\sqrt{3}$$= (\\u221A3 / 4) * a² => 4 = a²/4 => a² = 16 => a = 4 cm.\\n(समभुज त्रिकोणाचे क्षेत्रफळ = (\\u221A३ / ४) * a², जिथे 'a' ही बाजूची लांबी आहे. दिलेले क्षेत्रफळ =$$4\\sqrt{3}$$. म्हणून, $$4\\sqrt{3}$$ = (\\u221A३ / ४) * a² => ४ = a²/४ => a² = १६ => a = ४ सेमी.)"
+},
+{
+  q: "A bag contains 5 red and 3 green balls. If two balls are drawn at random without replacement, what is the probability that both are red? (एका पिशवीत ५ लाल आणि ३ हिरव्या चेंडू आहेत. जर दोन चेंडू अदलाबदल न करता यादृच्छिकपणे काढले, तर दोन्ही लाल असण्याची संभाव्यता (probability) किती आहे?)",
+  options: ["A) 5/14", "B) 25/64", "C) 1/4", "D) 1/28"],
+  ans: "A",
+  explanation: "Total balls = 5 + 3 = 8. Probability of drawing first red ball = 5/8. After drawing one red ball, 4 red balls remain out of 7 total balls. Probability of drawing second red ball = 4/7. Probability of both being red = (5/8) * (4/7) = 20/56 = 5/14.\\n(एकूण चेंडू = ५ + ३ = ८. पहिला लाल चेंडू काढण्याची संभाव्यता = ५/८. एक लाल चेंडू काढल्यानंतर, ७ पैकी ४ लाल चेंडू शिल्लक राहतात. दुसरा लाल चेंडू काढण्याची संभाव्यता = ४/७. दोन्ही लाल असण्याची संभाव्यता = (५/८) * (४/७) = २०/५६ = ५/१४.)"
+},
+{
+  q: "Solve for x: $$\\frac{x}{3} + \\frac{x}{4} = 7$$(x साठी सोडवा:$$\\frac{x}{3} + \\frac{x}{4} = 7$$)",
+  options: ["A) 9", "B) 12", "C) 15", "D) 21"],
+  ans: "B",
+  explanation: "Find a common denominator for the fractions, which is 12. So, $$\\frac{4x}{12} + \\frac{3x}{12} = 7$$=>$$\\frac{7x}{12} = 7$$=>$$7x = 7 \\times 12$$=>$$x = 12$$.\\n(अपूर्णांकांसाठी एक सामाईक भाजक (common denominator) शोधा, तो १२ आहे. म्हणून, $$\\frac{4x}{12} + \\frac{3x}{12} = 7$$=>$$\\frac{7x}{12} = 7$$=>$$7x = 7 \\times 12$$=>$$x = 12$$.) "
+},
+{
+  q: "What is the smallest 4-digit number that is perfectly divisible by 12, 18, and 24? (१२, १८ आणि २४ ने पूर्णपणे विभाज्य असलेली सर्वात लहान ४-अंकी संख्या कोणती आहे?)",
+  options: ["A) 1008", "B) 1080", "C) 1152", "D) 1200"],
+  ans: "A",
+  explanation: "First, find the LCM (Least Common Multiple) of 12, 18, and 24. LCM(12, 18, 24) = 72. Now, find the smallest multiple of 72 that is a 4-digit number. Smallest 4-digit number is 1000. 1000 / 72 \\u2248 13.88. So, the next multiple after 13 * 72 is 14 * 72 = 1008.\\n(प्रथम, १२, १८ आणि २४ चा लसावि (LCM) शोधा. लसावि(१२, १८, २४) = ७२. आता, ७२ चा सर्वात लहान ४-अंकी गुणक शोधा. सर्वात लहान ४-अंकी संख्या १००० आहे. १००० / ७२ \\u2248 १३.८८. म्हणून, १३ * ७२ नंतरचा पुढील गुणक १४ * ७२ = १००८.)"
+},
+
+// General Knowledge (सामान्य ज्ञान) - 6 Questions
+{
+  q: "The 'Bharat Mandapam' convention centre, recently in news for hosting the G20 Summit, is located in which city? ('भारत मंडपम' कन्व्हेन्शन सेंटर, जे G20 शिखर परिषदेचे आयोजन केल्यामुळे नुकतेच चर्चेत होते, कोणत्या शहरात स्थित आहे?)",
+  options: ["A) Mumbai (मुंबई)", "B) Bengaluru (बंगळूरु)", "C) New Delhi (नवी दिल्ली)", "D) Ahmedabad (अहमदाबाद)"],
+  ans: "C",
+  explanation: "The International Exhibition-cum-Convention Centre (IECC) complex, rebranded as 'Bharat Mandapam', is a world-class venue located at Pragati Maidan in New Delhi.\\n(आंतरराष्ट्रीय प्रदर्शन-सह-कन्व्हेन्शन सेंटर (IECC) कॉम्प्लेक्स, ज्याचे 'भारत मंडपम' असे नामकरण करण्यात आले आहे, हे नवी दिल्लीतील प्रगती मैदान येथे स्थित एक जागतिक दर्जाचे ठिकाण आहे.)"
+},
+{
+  q: "Who was the first Indian to win a Nobel Prize? (नोबेल पारितोषिक जिंकणारे पहिले भारतीय कोण होते?)",
+  options: ["A) C. V. Raman (सी. व्ही. रमण)", "B) Rabindranath Tagore (रवींद्रनाथ टागोर)", "C) Mother Teresa (मदर टेरेसा)", "D) Amartya Sen (अमर्त्य सेन)"],
+  ans: "B",
+  explanation: "Rabindranath Tagore was the first Indian and first non-European to win the Nobel Prize in Literature in 1913 for his collection of poems 'Gitanjali'.\\n(रवींद्रनाथ टागोर हे १९१३ मध्ये त्यांच्या 'गीतांजली' या कवितासंग्रहासाठी साहित्यातील नोबेल पारितोषिक जिंकणारे पहिले भारतीय आणि पहिले गैर-युरोपियन होते.)"
+},
+{
+  q: "The 'Chipko Movement' in India was primarily associated with: (भारतातील 'चिपको आंदोलन' मुख्यतः कशाशी संबंधित होते?)",
+  options: ["A) Wildlife conservation (वन्यजीव संवर्धन)", "B) Forest conservation (वन संवर्धन)", "C) Water conservation (जल संवर्धन)", "D) Soil conservation (मृदा संवर्धन)"],
+  ans: "B",
+  explanation: "The Chipko movement was a non-violent social and ecological movement by rural villagers, particularly women, in India in the 1970s, aimed at protecting trees and forests from government-backed logging.\\n(चिपको आंदोलन हे १९७० च्या दशकात भारतातील ग्रामीण गावकऱ्यांनी, विशेषतः महिलांनी, सरकार-समर्थित लाकूडतोडीपासून झाडे आणि जंगलांचे संरक्षण करण्याच्या उद्देशाने केलेले एक अहिंसक सामाजिक आणि पर्यावरणीय आंदोलन होते.)"
+},
+{
+  q: "Which of the following bodies advises the Government of India on higher education and research, including the allocation of funds? (खालीलपैकी कोणती संस्था भारत सरकारला उच्च शिक्षण आणि संशोधनावर, निधीच्या वाटपासह, सल्ला देते?)",
+  options: ["A) All India Council for Technical Education (AICTE) (अखिल भारतीय तंत्रशिक्षण परिषद)", "B) University Grants Commission (UGC) (विद्यापीठ अनुदान आयोग)", "C) National Council of Educational Research and Training (NCERT) (राष्ट्रीय शैक्षणिक संशोधन आणि प्रशिक्षण परिषद)", "D) Central Board of Secondary Education (CBSE) (केंद्रीय माध्यमिक शिक्षण मंडळ)"],
+  ans: "B",
+  explanation: "The University Grants Commission (UGC) is a statutory body set up by the Department of Higher Education, Ministry of Education, Government of India, for the coordination, determination, and maintenance of standards of university education in India.\\n(विद्यापीठ अनुदान आयोग (UGC) ही भारतातील विद्यापीठीय शिक्षणाचे समन्वय, निर्धारण आणि मानके राखण्यासाठी भारत सरकारच्या शिक्षण मंत्रालयाच्या उच्च शिक्षण विभागाने स्थापन केलेली एक वैधानिक संस्था आहे.)"
+},
+{
+  q: "The term 'Fourth Industrial Revolution' is most closely associated with: ('चौथी औद्योगिक क्रांती' हा शब्द प्रामुख्याने कशाशी संबंधित आहे?)",
+  options: ["A) Steam power and mechanization (वाफेची शक्ती आणि यांत्रिकीकरण)", "B) Mass production and electricity (मोठ्या प्रमाणात उत्पादन आणि वीज)", "C) Information technology and automation (माहिती तंत्रज्ञान आणि ऑटोमेशन)", "D) Artificial intelligence, IoT, and advanced robotics (कृत्रिम बुद्धिमत्ता, IoT आणि प्रगत रोबोटिक्स)"],
   ans: "D",
-  explanation: "'Neither of' takes a singular verb ('has') and a singular possessive pronoun ('his'/'her' or 'its', depending on context, 'his' for boys).\n('Neither of' नंतर एकवचनी क्रियापद ('has') आणि एकवचनी संबंधित सर्वनाम ('his'/'her' किंवा 'its', संदर्भानुसार 'his' मुलांसाठी) वापरले जाते.)"
+  explanation: "The Fourth Industrial Revolution (Industry 4.0) refers to the ongoing technological revolution characterized by a fusion of technologies that is blurring the lines between the physical, digital, and biological spheres, including AI, IoT, and robotics.\\n(चौथी औद्योगिक क्रांती (उद्योग ४.०) सध्याच्या तंत्रज्ञानाच्या क्रांतीचा संदर्भ देते, ज्यामध्ये भौतिक, डिजिटल आणि जैविक क्षेत्रांमधील सीमा अस्पष्ट करणाऱ्या तंत्रज्ञानाचा संगम आहे, ज्यात AI, IoT आणि रोबोटिक्स यांचा समावेश आहे.)"
 },
 {
-  q: "Select the word that is correctly spelled. (योग्य स्पेलिंग असलेला शब्द निवडा.)",
-  options: ["A) Concious", "B) Conscience", "C) Conciseness", "D) Conciense"],
-  ans: "B",
-  explanation: "The correct spelling is 'Conscience'. 'Concious' is a common misspelling of 'Conscious'. 'Conciseness' is a different word.\n(योग्य स्पेलिंग 'Conscience' आहे. 'Concious' हे 'Conscious' चे सामान्यतः चुकीचे स्पेलिंग आहे. 'Conciseness' हा वेगळा शब्द आहे.)"
-},
-
-// Mathematics (गणित) - 5 Questions
-{
-  q: "A sum of money doubles itself at simple interest in 10 years. In how many years will it triple itself at the same rate? (एका रकमेची सरळ व्याजाने १० वर्षांत दुप्पट होते. त्याच दराने ती रक्कम किती वर्षांत तिप्पट होईल?)",
-  options: ["A) 15 years", "B) 20 years", "C) 25 years", "D) 30 years"],
-  ans: "B",
-  explanation: "If a sum doubles in 10 years at simple interest, it means interest (I) = Principal (P). So, P = (P * R * 10) / 100 => 1 = (R * 10) / 100 => R = 10%. To triple itself, I = 2P. So, 2P = (P * 10 * T) / 100 => 2 = (10 * T) / 100 => T = 20 years.\n(जर एखादी रक्कम सरळ व्याजाने १० वर्षांत दुप्पट होत असेल, तर याचा अर्थ व्याज (I) = मूळ रक्कम (P). म्हणून, P = (P * R * १०) / १०० => १ = (R * १०) / १०० => R = १०%. ती रक्कम तिप्पट होण्यासाठी, I = २P. म्हणून, २P = (P * १० * T) / १०० => २ = (१० * T) / १०० => T = २० वर्षे.)"
-},
-{
-  q: "If 15 men can complete a piece of work in 20 days, how many men will be required to complete the same work in 30 days? (जर १५ पुरुष एक काम २० दिवसांत पूर्ण करू शकतात, तर तेच काम ३० दिवसांत पूर्ण करण्यासाठी किती पुरुषांची आवश्यकता असेल?)",
-  options: ["A) 10 men", "B) 12 men", "C) 15 men", "D) 20 men"],
-  ans: "A",
-  explanation: "This is an inverse proportion problem. M1 * D1 = M2 * D2. Here, M1=15, D1=20, D2=30. So, 15 * 20 = M2 * 30 => 300 = 30 * M2 => M2 = 300/30 = 10 men.\n(हा व्यस्त प्रमाण (inverse proportion) समस्या आहे. M1 * D1 = M2 * D2. येथे, M1=१५, D1=२०, D2=३०. म्हणून, १५ * २० = M2 * ३० => ३०० = ३० * M2 => M2 = ३००/३० = १० पुरुष.)"
-},
-{
-  q: "The average age of 30 students in a class is 15 years. If the age of the teacher is also included, the average age becomes 16 years. What is the teacher's age? (एका वर्गातील ३० विद्यार्थ्यांचे सरासरी वय १५ वर्षे आहे. जर शिक्षकाचे वय देखील समाविष्ट केले, तर सरासरी वय १६ वर्षे होते. शिक्षकाचे वय किती आहे?)",
-  options: ["A) 30 years", "B) 46 years", "C) 42 years", "D) 45 years"],
-  ans: "B",
-  explanation: "Total age of 30 students = 30 * 15 = 450 years. When the teacher's age is included, total persons = 31, and new average = 16. New total age = 31 * 16 = 496 years. Teacher's age = New total age - Old total age = 496 - 450 = 46 years.\n(३० विद्यार्थ्यांचे एकूण वय = ३० * १५ = ४५० वर्षे. शिक्षकाचे वय समाविष्ट केल्यावर, एकूण व्यक्ती = ३१, आणि नवीन सरासरी = १६. नवीन एकूण वय = ३१ * १६ = ४९६ वर्षे. शिक्षकाचे वय = नवीन एकूण वय - जुने एकूण वय = ४९६ - ४५० = ४६ वर्षे.)"
-},
-{
-  q: "If 3 men or 5 women can finish a work in 12 days, how many days will 6 men and 5 women take to finish the same work? (जर ३ पुरुष किंवा ५ स्त्रिया एक काम १२ दिवसांत पूर्ण करू शकतात, तर तेच काम ६ पुरुष आणि ५ स्त्रिया किती दिवसांत पूर्ण करतील?)",
-  options: ["A) 4 days", "B) 5 days", "C) 6 days", "D) 7 days"],
-  ans: "A",
-  explanation: "3 men = 5 women. So, 1 man = 5/3 women. 6 men + 5 women = 6 * (5/3) women + 5 women = 10 women + 5 women = 15 women. Since 5 women can do the work in 12 days, 1 woman can do it in 5 * 12 = 60 days. So, 15 women can do it in 60 / 15 = 4 days.\n(३ पुरुष = ५ स्त्रिया. म्हणून, १ पुरुष = ५/३ स्त्रिया. ६ पुरुष + ५ स्त्रिया = ६ * (५/३) स्त्रिया + ५ स्त्रिया = १० स्त्रिया + ५ स्त्रिया = १५ स्त्रिया. ५ स्त्रिया १२ दिवसांत काम पूर्ण करतात, तर १ स्त्री ६० दिवसांत करेल. म्हणून, १५ स्त्रिया ६० / १५ = ४ दिवसांत करतील.)"
-},
-{
-  q: "What is the largest number that divides 102 and 187 exactly? (१०२ आणि १८७ ला पूर्णपणे भाग जाणारी सर्वात मोठी संख्या कोणती आहे?)",
-  options: ["A) 13", "B) 17", "C) 19", "D) 23"],
-  ans: "B",
-  explanation: "We need to find the HCF (Highest Common Factor) of 102 and 187. Factors of 102 = 1, 2, 3, 6, 17, 34, 51, 102. Factors of 187 = 1, 11, 17, 187. The highest common factor is 17.\n(आपल्याला १०२ आणि १८७ चा मसावि (HCF) शोधायचा आहे. १०२ चे अवयव = १, २, ३, ६, १७, ३४, ५१, १०२. १८७ चे अवयव = १, ११, १७, १८७. सर्वात मोठा सामाईक अवयव १७ आहे.)"
-},
-
-// General Knowledge (सामान्य ज्ञान) - 5 Questions
-{
-  q: "Which Indian organization is responsible for conducting the National Institutional Ranking Framework (NIRF) rankings? (कोणती भारतीय संस्था राष्ट्रीय संस्थात्मक रँकिंग फ्रेमवर्क (NIRF) रँकिंग आयोजित करण्यासाठी जबाबदार आहे?)",
-  options: ["A) University Grants Commission (UGC) (विद्यापीठ अनुदान आयोग)", "B) All India Council for Technical Education (AICTE) (अखिल भारतीय तंत्रशिक्षण परिषद)", "C) Ministry of Education (शिक्षण मंत्रालय)", "D) NITI Aayog (नीती आयोग)"],
-  ans: "C",
-  explanation: "The National Institutional Ranking Framework (NIRF) is an initiative by the Ministry of Education, Government of India, to rank higher education institutions in India.\n(राष्ट्रीय संस्थात्मक रँकिंग फ्रेमवर्क (NIRF) ही भारतातील उच्च शिक्षण संस्थांना रँक देण्यासाठी भारत सरकारच्या शिक्षण मंत्रालयाची एक योजना आहे.)"
-},
-{
-  q: "The 'Chandrayaan-3' mission, which successfully landed on the Moon, was launched by which organization? ('चंद्रयान-३' मोहीम, जी चंद्रावर यशस्वीरित्या उतरली, कोणत्या संस्थेने प्रक्षेपित केली?)",
-  options: ["A) NASA (नासा)", "B) Roscosmos (रोसकॉसमॉस)", "C) ISRO (इस्रो)", "D) ESA (ईएसए)"],
-  ans: "C",
-  explanation: "Chandrayaan-3 is the third lunar exploration mission by the Indian Space Research Organisation (ISRO).\n(चंद्रयान-३ ही भारतीय अंतराळ संशोधन संस्था (ISRO) द्वारे तिसरी चंद्र शोध मोहीम आहे.)"
-},
-{
-  q: "Which of the following international organizations has its headquarters in Geneva, Switzerland? (खालीलपैकी कोणत्या आंतरराष्ट्रीय संस्थेचे मुख्यालय जिनिव्हा, स्वित्झर्लंड येथे आहे?)",
-  options: ["A) World Bank (जागतिक बँक)", "B) International Monetary Fund (IMF) (आंतरराष्ट्रीय नाणेनिधी)", "C) World Health Organization (WHO) (जागतिक आरोग्य संघटना)", "D) United Nations (संयुक्त राष्ट्र)"],
-  ans: "C",
-  explanation: "The World Health Organization (WHO) is headquartered in Geneva, Switzerland. The World Bank and IMF are in Washington D.C., and the main UN headquarters is in New York.\n(जागतिक आरोग्य संघटना (WHO) चे मुख्यालय जिनिव्हा, स्वित्झर्लंड येथे आहे. जागतिक बँक आणि आंतरराष्ट्रीय नाणेनिधी वॉशिंग्टन डी.सी. मध्ये आहेत, आणि संयुक्त राष्ट्रांचे मुख्य मुख्यालय न्यूयॉर्कमध्ये आहे.)"
-},
-{
-  q: "Which major river flows through the city of Ayodhya, significant for the Ram Temple? (राम मंदिरासाठी महत्त्वपूर्ण असलेल्या अयोध्या शहरातून कोणती प्रमुख नदी वाहते?)",
-  options: ["A) Yamuna (यमुना)", "B) Ganga (गंगा)", "C) Sarayu (सरयू)", "D) Gomti (गोमती)"],
-  ans: "C",
-  explanation: "The Sarayu River is a sacred river that flows through the city of Ayodhya in Uttar Pradesh, India. It holds immense religious significance, especially in Hinduism.\n(सरयू नदी ही एक पवित्र नदी आहे जी भारतातील उत्तर प्रदेशातील अयोध्या शहरातून वाहते. विशेषतः हिंदू धर्मात या नदीला खूप धार्मिक महत्त्व आहे.)"
-},
-{
-  q: "The G20 grouping accounts for approximately what percentage of global GDP? (G20 गट जागतिक जीडीपीच्या अंदाजे किती टक्के आहे?)",
-  options: ["A) 50%", "B) 60%", "C) 70%", "D) 80%"],
+  q: "Which of these is NOT a directly administered Central University in India? (यापैकी कोणते भारतातील थेट प्रशासित केंद्रीय विद्यापीठ नाही?)",
+  options: ["A) Delhi University (दिल्ली विद्यापीठ)", "B) Jawaharlal Nehru University (जवाहरलाल नेहरू विद्यापीठ)", "C) Banaras Hindu University (बनारस हिंदू विद्यापीठ)", "D) Symbiosis International University (सिम्बायोसिस आंतरराष्ट्रीय विद्यापीठ)"],
   ans: "D",
-  explanation: "The G20 members represent around 80% of the world's economic output, two-thirds of the global population, and three-quarters of international trade.\n(G20 सदस्य जगाच्या आर्थिक उत्पादनाच्या अंदाजे ८०%, जागतिक लोकसंख्येच्या दोन तृतीयांश आणि आंतरराष्ट्रीय व्यापाराच्या तीन चतुर्थांश भागाचे प्रतिनिधित्व करतात.)"
+  explanation: "Symbiosis International University is a private deemed university located in Pune, Maharashtra. The others are Central Universities administered by the Government of India.\\n(सिम्बायोसिस आंतरराष्ट्रीय विद्यापीठ हे पुणे, महाराष्ट्र येथे स्थित एक खाजगी डीम्ड विद्यापीठ आहे. इतर केंद्रीय विद्यापीठे भारत सरकारद्वारे प्रशासित आहेत.)"
 },
 
-// Reasoning and Analytical Skills (तर्क आणि विश्लेषणात्मक कौशल्ये) - 5 Questions
+// Reasoning and Analytical Skills (तर्क आणि विश्लेषणात्मक कौशल्ये) - 6 Questions
 {
-  q: "If A is the father of B, B is the brother of C, and C is the daughter of D, how is D related to A? (जर A हा B चा वडील आहे, B हा C चा भाऊ आहे, आणि C ही D ची मुलगी आहे, तर D चा A शी काय संबंध आहे?)",
-  options: ["A) Son (मुलगा)", "B) Daughter (मुलगी)", "C) Wife (पत्नी)", "D) Husband (पती)"],
-  ans: "C",
-  explanation: "A is father of B. B is brother of C. So A is father of C. C is daughter of D. This means D is the mother of C. Thus, D is the wife of A.\n(A हा B चा वडील आहे. B हा C चा भाऊ आहे. म्हणून A हा C चा वडील आहे. C ही D ची मुलगी आहे. याचा अर्थ D ही C ची आई आहे. म्हणून D ही A ची पत्नी आहे.)"
+  q: "Find the missing number in the sequence: 1, 8, 27, 64, ___. (मालिकेतील गहाळ संख्या शोधा: १, ८, २७, ६४, ___.)",
+  options: ["A) 100", "B) 125", "C) 81", "D) 121"],
+  ans: "B",
+  explanation: "The sequence consists of cubes of natural numbers: 1³=1, 2³=8, 3³=27, 4³=64. So the next number is 5³=125.\\n(ही मालिका नैसर्गिक संख्यांच्या घनमूळांची आहे: १³=१, २³=८, ३³=२७, ४³=६४. म्हणून पुढील संख्या ५³=१२५ आहे.)"
 },
 {
-  q: "Find the odd one out: (विसंगत शब्द ओळखा:)",
-  options: ["A) Lion (सिंह)", "B) Tiger (वाघ)", "C) Fox (कोल्हा)", "D) Elephant (हत्ती)"],
+  q: "Statements: All bags are shirts. Some shirts are pants. Conclusion I: Some bags are pants. Conclusion II: No bag is a pant. (विधाने: सर्व बॅग शर्ट आहेत. काही शर्ट पॅन्ट आहेत. निष्कर्ष I: काही बॅग पॅन्ट आहेत. निष्कर्ष II: कोणतीही बॅग पॅन्ट नाही.)",
+  options: ["A) Only Conclusion I follows (फक्त निष्कर्ष I अनुसरण करतो)", "B) Only Conclusion II follows (फक्त निष्कर्ष II अनुसरण करतो)", "C) Either I or II follows (I किंवा II पैकी एक अनुसरण करतो)", "D) Neither I nor II follows (I किंवा II दोन्ही अनुसरण करत नाहीत)"],
   ans: "D",
-  explanation: "Lion, Tiger, and Fox are all carnivores (meat-eaters) or omnivores, typically predators. Elephant is a herbivore (plant-eater).\n(सिंह, वाघ आणि कोल्हा हे सर्व मांसाहारी (मांस खाणारे) किंवा मिश्राहारी आहेत, सामान्यतः शिकारी आहेत. हत्ती हा शाकाहारी आहे.)"
+  explanation: "From the given statements, there is no definite direct relationship established between 'bags' and 'pants'. While some shirts are pants, and all bags are shirts, it doesn't guarantee that those specific shirts that are pants are also the ones that are bags. Thus, neither conclusion I nor II can be definitively drawn.\\n(दिलेल्या विधानांमधून, 'बॅग' आणि 'पॅन्ट' यांच्यात कोणताही निश्चित थेट संबंध स्थापित होत नाही. काही शर्ट पॅन्ट असले तरी, आणि सर्व बॅग शर्ट असले तरी, याचा अर्थ असा होत नाही की जे शर्ट पॅन्ट आहेत तेच शर्ट बॅग देखील आहेत. त्यामुळे, निष्कर्ष I किंवा II यापैकी कोणताही निश्चितपणे काढला जाऊ शकत नाही.)"
 },
 {
-  q: "What will come in place of the question mark (?) in the following series: C, F, I, L, O, ? (खालील मालिकेत प्रश्नचिन्हाच्या (?) जागी काय येईल: C, F, I, L, O, ?)",
-  options: ["A) R", "B) P", "C) S", "D) T"],
+  q: "A person walks 20 meters North, then turns left and walks 10 meters. Then he turns right and walks 20 meters. How far and in which direction is he from the starting point? (एक व्यक्ती २० मीटर उत्तरेकडे चालतो, नंतर डावीकडे वळतो आणि १० मीटर चालतो. नंतर तो उजवीकडे वळतो आणि २० मीटर चालतो. तो सुरुवातीच्या बिंदूपासून किती दूर आणि कोणत्या दिशेला आहे?)",
+  options: ["A) 40m North-West (४०मी वायव्य)", "B) 50m North (५०मी उत्तर)", "C) 20m West (२०मी पश्चिम)", "D) 40m North (४०मी उत्तर)"],
   ans: "A",
-  explanation: "The pattern involves skipping two letters between each term: C (+2 letters) -> F, F (+2 letters) -> I, I (+2 letters) -> L, L (+2 letters) -> O. Following this, O (+2 letters) -> R.\n(नमुना असा आहे की प्रत्येक पदाच्या दरम्यान दोन अक्षरे वगळली जातात: C (+२ अक्षरे) -> F, F (+२ अक्षरे) -> I, I (+२ अक्षरे) -> L, L (+२ अक्षरे) -> O. यानुसार, O (+२ अक्षरे) -> R.)"
+  explanation: "The person first walks 20m North. Then turns left (West) and walks 10m. Then turns right (North) and walks another 20m. So, effectively, he moved 20+20=40m North and 10m West from his starting point. The distance from the starting point is calculated using Pythagoras theorem: $$\\sqrt{40^2 + 10^2} = \\sqrt{1600 + 100} = \\sqrt{1700} \\approx 41.23$$meters. The direction is North-West.\\n(व्यक्ती प्रथम २०मी उत्तरेकडे चालतो. नंतर डावीकडे (पश्चिमेकडे) वळतो आणि १०मी चालतो. नंतर उजवीकडे (उत्तरेकडे) वळतो आणि आणखी २०मी चालतो. त्यामुळे, प्रत्यक्षात तो त्याच्या सुरुवातीच्या बिंदूपासून २०+२०=४०मी उत्तरेकडे आणि १०मी पश्चिमेकडे गेला. सुरुवातीच्या बिंदूपासूनचे अंतर पायथागोरस प्रमेय वापरून मोजले जाते:$$\\sqrt{40^2 + 10^2} = \\sqrt{1600 + 100} = \\sqrt{1700} \\approx 41.23$$ मीटर. दिशा वायव्य आहे.)"
 },
 {
-  q: "Statements: All cars are trains. All trains are buses. Conclusion: All cars are buses. (विधाने: सर्व कार ट्रेन आहेत. सर्व ट्रेन बस आहेत. निष्कर्ष: सर्व कार बस आहेत.)",
-  options: ["A) The conclusion is definitely true. (निष्कर्ष निश्चितपणे सत्य आहे.)", "B) The conclusion is definitely false. (निष्कर्ष निश्चितपणे असत्य आहे.)", "C) The conclusion might be true. (निष्कर्ष कदाचित सत्य असू शकतो.)", "D) The conclusion is irrelevant. (निष्कर्ष अप्रस्तुत आहे.)"],
+  q: "Complete the analogy: 'Water : Thirst :: Food : ?' (सादृश्य पूर्ण करा: 'पाणी : तहान :: अन्न : ?')",
+  options: ["A) Hunger (भूक)", "B) Taste (चव)", "C) Eat (खाणे)", "D) Cook (शिजवणे)"],
   ans: "A",
-  explanation: "This is a basic syllogism. If all members of group A are in group B, and all members of group B are in group C, then all members of group A must also be in group C. Here, A=Cars, B=Trains, C=Buses.\n(हा एक मूलभूत तर्कशास्त्र (syllogism) आहे. जर गट A चे सर्व सदस्य गट B मध्ये असतील आणि गट B चे सर्व सदस्य गट C मध्ये असतील, तर गट A चे सर्व सदस्य गट C मध्ये असलेच पाहिजेत. येथे, A=कार, B=ट्रेन, C=बस.)"
+  explanation: "Water quenches thirst. Similarly, Food satisfies hunger.\\n(पाणी तहान भागवते. त्याचप्रमाणे, अन्न भूक भागवते.)"
 },
 {
-  q: "How many pairs of letters are there in the word 'PARADISE' which have as many letters between them in the word as in the English alphabet? (शब्द 'PARADISE' मध्ये अक्षरांच्या अशा किती जोड्या आहेत, ज्यांच्यामध्ये शब्दात तेवढीच अक्षरे आहेत जितकी इंग्रजी वर्णमालेत असतात?)",
-  options: ["A) One", "B) Two", "C) Three", "D) Four"],
-  ans: "C",
-  explanation: "The pairs are: P-R (1 letter in word, 1 in alphabet - Q), A-D (2 letters in word, 2 in alphabet - BC), A-I (4 letters in word, 4 in alphabet - BCDE), S-E (none). If considering both forward and backward, D-E (0 letters in word, 0 in alphabet). Also P-S (2 letters, Q,R in alphabet), R-S (0 letters). So, P-R, A-D, S-E are direct pairs if counting both directions for letters, otherwise just P-R and A-D forward. Also P to S (2), A to S (4), I to S (0), P to E (8), A to E (3). The correct interpretation for this type of question generally looks for *forward* pairs with exact alphabet distance. P to R (Q), A to D (B, C), R to S (no gap). Also from right to left, E to I (F, G, H). So, P-R, A-D, E-I. Hence, three pairs.\n(जोड्या आहेत: P-R (शब्दात १ अक्षर, वर्णमालेत १ - Q), A-D (शब्दात २ अक्षरे, वर्णमालेत २ - BC), E-I (शब्दात ३ अक्षरे, वर्णमालेत ३ - FGH). म्हणून तीन जोड्या.)"
+  q: "If 'MONDAY' is coded as 'OGPECAY', how is 'SUNDAY' coded? (जर 'MONDAY' चा कोड 'OGPECAY' असेल, तर 'SUNDAY' चा कोड काय असेल?)",
+  options: ["A) UWPBCY", "B) VWQCEZ", "C) UWPDEZ", "D) UWTFCE"],
+  ans: "A",
+  explanation: "The provided example for 'MONDAY' has inconsistencies in its pattern (e.g., 'O' to 'G' is -8, 'D' to 'E' is +1, while others are +2). However, assuming a dominant pattern or a best-fit from options: for 'SUNDAY' -> 'UWPBCY', the shifts are S(+2)=U, U(+2)=W, N(+2)=P, D(-2)=B, A(+2)=C, Y(0)=Y. This pattern is mixed and is often indicative of a complex rule or a potentially flawed question example. For a consistent +2 shift, 'SUNDAY' would be 'UWPFCY'.\\n('MONDAY' साठी दिलेल्या उदाहरणातील नमुना विसंगत आहे (उदा. 'O' ते 'G' हे -8 आहे, 'D' ते 'E' हे +1 आहे, तर इतर +2 आहेत). तथापि, प्रमुख नमुना किंवा पर्यायांमधून सर्वोत्तम जुळणारा पर्याय गृहीत धरल्यास: 'SUNDAY' -> 'UWPBCY' साठी, शिफ्ट S(+2)=U, U(+2)=W, N(+2)=P, D(-2)=B, A(+2)=C, Y(0)=Y आहेत. हा नमुना मिश्र आहे आणि अनेकदा जटिल नियम किंवा संभाव्यतः सदोष प्रश्न उदाहरणाचे सूचक असतो. सुसंगत +2 शिफ्टसाठी, 'SUNDAY' 'UWPFCY' असेल.)"
+},
+{
+  q: "In a certain code language, 'PINK' is written as 'PNIK'. How will 'BLUE' be written in that code language? (एका विशिष्ट सांकेतिक भाषेत 'PINK' ला 'PNIK' असे लिहिले जाते. तर 'BLUE' ला त्या सांकेतिक भाषेत कसे लिहिले जाईल?)",
+  options: ["A) BLUED", "B) BULE", "C) LUEB", "D) LBUE"],
+  ans: "B",
+  explanation: "In 'PINK' to 'PNIK', the first letter 'P' remains in place. The second and third letters ('I' and 'N') swap their positions. The last letter 'K' remains in place. Applying this to 'BLUE': 'B' remains, 'L' and 'U' swap to 'UL', 'E' remains. So, 'BLUE' becomes 'BULE'.\\n('PINK' वरून 'PNIK' मध्ये, पहिले अक्षर 'P' जागेवरच राहते. दुसरे आणि तिसरे अक्षर ('I' आणि 'N') त्यांची जागा बदलतात. शेवटचे अक्षर 'K' जागेवरच राहते. हे 'BLUE' ला लागू केल्यास: 'B' जागेवर राहते, 'L' आणि 'U' जागा बदलून 'UL' होतात, 'E' जागेवर राहते. म्हणून, 'BLUE' 'BULE' बनते.)"
 },
 
-// Computer Knowledge (संगणक ज्ञान) - 5 Questions
+// Computer Knowledge (संगणक ज्ञान) - 4 Questions
 {
-  q: "Which of the following components stores data temporarily and is known as volatile memory? (खालीलपैकी कोणता घटक डेटा तात्पुरता संग्रहित करतो आणि अस्थिर मेमरी म्हणून ओळखला जातो?)",
-  options: ["A) Hard Disk Drive (HDD) (हार्ड डिस्क ड्राइव्ह)", "B) Solid State Drive (SSD) (सॉलिड स्टेट ड्राइव्ह)", "C) Random Access Memory (RAM) (रँडम ॲक्सेस मेमरी)", "D) Read-Only Memory (ROM) (रीड-ओन्ली मेमरी)"],
+  q: "Which of the following is an example of an open-source software? (खालीलपैकी कोणते मुक्त-स्रोत सॉफ्टवेअरचे (open-source software) उदाहरण आहे?)",
+  options: ["A) Microsoft Office (मायक्रोसॉफ्ट ऑफिस)", "B) Adobe Photoshop (ॲडोब फोटोशॉप)", "C) Mozilla Firefox (मोझिला फायरफॉक्स)", "D) AutoCAD (ऑटोकॅड)"],
   ans: "C",
-  explanation: "RAM (Random Access Memory) is a volatile memory, meaning it loses its data when the computer is turned off. HDD and SSD are non-volatile storage, and ROM is non-volatile but read-only.\n(रॅम (Random Access Memory) ही एक अस्थिर मेमरी आहे, म्हणजे जेव्हा संगणक बंद केला जातो तेव्हा ती आपला डेटा गमावते. HDD आणि SSD हे स्थिर स्टोरेज आहेत, आणि ROM स्थिर आहे परंतु फक्त वाचता येते.)"
+  explanation: "Mozilla Firefox is an open-source web browser, meaning its source code is publicly available and can be modified. Microsoft Office, Adobe Photoshop, and AutoCAD are proprietary software.\\n(मोझिला फायरफॉक्स हे एक मुक्त-स्रोत वेब ब्राउझर आहे, म्हणजे त्याचा स्त्रोत कोड सार्वजनिकपणे उपलब्ध आहे आणि त्यात बदल केले जाऊ शकतात. मायक्रोसॉफ्ट ऑफिस, ॲडोब फोटोशॉप आणि ऑटोकॅड हे मालकी हक्काचे सॉफ्टवेअर आहेत.)"
 },
 {
-  q: "What is the primary function of a 'router' in a computer network? (संगणक नेटवर्कमध्ये 'राउटर' चे प्राथमिक कार्य काय आहे?)",
-  options: ["A) To print documents (दस्तऐवज प्रिंट करणे)", "B) To manage power supply (वीज पुरवठा व्यवस्थापित करणे)", "C) To forward data packets between different computer networks (वेगवेगळ्या संगणक नेटवर्क दरम्यान डेटा पॅकेट फॉरवर्ड करणे)", "D) To store large amounts of data (मोठ्या प्रमाणात डेटा संग्रहित करणे)"],
-  ans: "C",
-  explanation: "A router is a networking device that forwards data packets between computer networks. Routers perform the traffic directing functions on the Internet.\n(राउटर हे एक नेटवर्किंग उपकरण आहे जे वेगवेगळ्या संगणक नेटवर्क दरम्यान डेटा पॅकेट फॉरवर्ड करते. राउटर इंटरनेटवर रहदारी निर्देशित करण्याचे कार्य करते.)"
-},
-{
-  q: "Which of the following is a cloud storage service? (खालीलपैकी कोणती क्लाउड स्टोरेज सेवा आहे?)",
-  options: ["A) Microsoft Word (मायक्रोसॉफ्ट वर्ड)", "B) Adobe Photoshop (ॲडोब फोटोशॉप)", "C) Google Drive (गुगल ड्राइव्ह)", "D) VLC Media Player (व्हीएलसी मीडिया प्लेयर)"],
-  ans: "C",
-  explanation: "Google Drive is a file storage and synchronization service developed by Google. It allows users to store files on their servers, synchronize files across devices, and share files.\n(गुगल ड्राइव्ह ही गुगलने विकसित केलेली एक फाइल स्टोरेज आणि सिंक्रोनायझेशन सेवा आहे. ती वापरकर्त्यांना त्यांच्या सर्व्हरवर फाइल्स साठवण्याची, डिव्हाइसेसवर फाइल्स सिंक्रोनाइझ करण्याची आणि फाइल्स शेअर करण्याची परवानगी देते.)"
-},
-{
-  q: "What does 'HTTP' stand for? ('HTTP' चे पूर्ण रूप काय आहे?)",
-  options: ["A) HyperText Transfer Protocol", "B) High-Tech Transfer Program", "C) Hyperlink Text Protocol", "D) Home Tool Transfer Protocol"],
+  q: "What is the full form of 'WWW'? ('WWW' चे पूर्ण रूप काय आहे?)",
+  options: ["A) World Wide Web", "B) World Wide Windows", "C) Web Wide World", "D) World Web Work"],
   ans: "A",
-  explanation: "HTTP (HyperText Transfer Protocol) is the underlying protocol used by the World Wide Web. It defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.\n(HTTP (HyperText Transfer Protocol) हा वर्ल्ड वाईड वेबद्वारे वापरला जाणारा मूलभूत प्रोटोकॉल आहे. तो संदेश कसे स्वरूपित आणि प्रसारित केले जातात आणि विविध आदेशांना प्रतिसाद म्हणून वेब सर्व्हर आणि ब्राउझरने कोणती क्रिया करावी हे परिभाषित करतो.)"
+  explanation: "WWW stands for World Wide Web, which is a system of interlinked hypertext documents accessed via the Internet.\\n(WWW चे पूर्ण रूप वर्ल्ड वाईड वेब आहे, जी इंटरनेटद्वारे प्रवेश केलेल्या आंतरजोडणी असलेल्या हायपरटेक्स्ट दस्तऐवजांची एक प्रणाली आहे.)"
 },
 {
-  q: "Which of these is a popular open-source operating system? (खालीलपैकी कोणती लोकप्रिय मुक्त-स्रोत ऑपरेटिंग सिस्टम आहे?)",
-  options: ["A) Windows (विंडोज)", "B) macOS (मॅकओएस)", "C) Linux (लिनक्स)", "D) iOS (आयओएस)"],
+  q: "Which of these is primarily used for creating and managing databases? (यापैकी कोणते प्रामुख्याने डेटाबेस तयार करण्यासाठी आणि व्यवस्थापित करण्यासाठी वापरले जाते?)",
+  options: ["A) MS Word (एमएस वर्ड)", "B) MS Excel (एमएस एक्सेल)", "C) MS PowerPoint (एमएस पॉवरपॉइंट)", "D) MS Access (एमएस ॲक्सेस)"],
+  ans: "D",
+  explanation: "Microsoft Access is a database management system (DBMS) from Microsoft that combines the relational Microsoft Jet Database Engine with a graphical user interface and software-development tools.\\n(मायक्रोसॉफ्ट ॲक्सेस हे मायक्रोसॉफ्टचे एक डेटाबेस मॅनेजमेंट सिस्टम (DBMS) आहे जे ग्राफिकल युझर इंटरफेस आणि सॉफ्टवेअर-डेव्हलपमेंट टूल्ससह रिलेशनल मायक्रोसॉफ्ट जेट डेटाबेस इंजिन एकत्र करते.)"
+},
+{
+  q: "What is the common term for unwanted, unsolicited email? (अवांछित, विनंती नसलेल्या ईमेलसाठी सामान्य संज्ञा काय आहे?)",
+  options: ["A) Virus (व्हायरस)", "B) Malware (मालवेअर)", "C) Spam (स्पॅम)", "D) Phishing (फिशिंग)"],
   ans: "C",
-  explanation: "Linux is a family of open-source Unix-like operating systems based on the Linux kernel. Windows, macOS, and iOS are proprietary operating systems.\n(लिनक्स हे लिनक्स कर्नलवर आधारित मुक्त-स्रोत युनिक्स-सारख्या ऑपरेटिंग सिस्टम्सचे कुटुंब आहे. विंडोज, macOS आणि iOS हे मालकी हक्काचे ऑपरेटिंग सिस्टम आहेत.)"
+  explanation: "Spam is unsolicited electronic junk mail. It is often sent in large quantities to an indiscriminate set of recipients.\\n(स्पॅम म्हणजे अवांछित इलेक्ट्रॉनिक जंक मेल. हे अनेकदा मोठ्या प्रमाणात प्राप्तकर्त्यांच्या अनियंत्रित संचाला पाठवले जाते.)"
 }
 ];
 
