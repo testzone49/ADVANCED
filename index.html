@@ -1,57 +1,1218 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-    <!-- पृष्ठ प्रतिसादशील बनवण्यासाठी व्ह्यूपोर्ट सेट करा -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>साधी वेब पेज</title>
-    <!-- Tailwind CSS वापरण्यासाठी स्क्रिप्ट -->
+    <title>JAA Practice Test - Set 10</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- इंटर फॉन्ट वापरण्यासाठी स्क्रिप्ट -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+        }
+        .question {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        .option {
+            background-color: #f9fafb;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 0.5rem;
+        }
+        .option:hover {
+            background-color: #e5e7eb;
+        }
+        .correct-answer {
+            background-color: #d1fae5;
+            border: 2px solid #34d399;
+            color: #065f46;
+        }
+        .explanation {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f3f4f6;
+            border-left: 4px solid #4b5563;
+            color: #374151;
+        }
+        .correct-btn {
+            background-color: #34d399;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+        }
+        .hide {
+            display: none;
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<body class="p-6">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8">JAA Practice Test - Set 10</h1>
+        <p class="text-center text-gray-600 mb-8">तुमच्या आजच्या सरावासाठी ७० प्रश्न (70 questions for your practice today).</p>
 
-    <!-- मुख्य कंटेनर, गोलाकार कडा आणि सावलीसह -->
-    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-lg w-full text-center">
+        <!-- Question 1 -->
+        <div class="card mb-6">
+            <p class="question">Q1: मालिकेतील गहाळ संख्या शोधा: 5, 11, 23, 47, 95, ___.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) 181</div>
+                <div class="option" data-answer="B">B) 191</div>
+                <div class="option" data-answer="B">C) 189</div>
+                <div class="option" data-answer="B">D) 195</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) 191</p>
+                <p><strong>स्पष्टीकरण:</strong> ही मालिका गुणोत्तर श्रेणीत (geometric progression) आहे, जिथे प्रत्येक पुढील संख्या मागील संख्येच्या दुप्पट करून १ मिळवून मिळते.</p>
+                <p>$$(5 \times 2) + 1 = 11$$</p>
+                <p>$$(11 \times 2) + 1 = 23$$</p>
+                <p>$$(23 \times 2) + 1 = 47$$</p>
+                <p>$$(47 \times 2) + 1 = 95$$</p>
+                <p>$$(95 \times 2) + 1 = 191$$</p>
+            </div>
+        </div>
 
-        <!-- शीर्षलेख -->
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">स्वागत आहे!</h1>
+        <!-- Question 2 -->
+        <div class="card mb-6">
+            <p class="question">Q2: विधाने: काही पेन पेन्सिल आहेत. सर्व पेन्सिल पुस्तके आहेत. निष्कर्ष I: काही पेन पुस्तके आहेत. निष्कर्ष II: काही पुस्तके पेन आहेत.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) फक्त निष्कर्ष I अनुसरण करतो</div>
+                <div class="option" data-answer="C">B) फक्त निष्कर्ष II अनुसरण करतो</div>
+                <div class="option" data-answer="C">C) I आणि II दोन्ही अनुसरण करतात</div>
+                <div class="option" data-answer="C">D) I किंवा II दोन्ही अनुसरण करत नाहीत</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) I आणि II दोन्ही अनुसरण करतात</p>
+                <p><strong>स्पष्टीकरण:</strong> वेन डायग्रामनुसार, 'पेन' आणि 'पेन्सिल' यांच्यात काही संबंध आहे आणि 'पेन्सिल' आणि 'पुस्तके' यांच्यात पूर्ण संबंध आहे. त्यामुळे 'पेन' आणि 'पुस्तके' यांच्यातही काही संबंध असेल. म्हणून दोन्ही निष्कर्ष योग्य आहेत.</p>
+            </div>
+        </div>
 
-        <!-- मजकूर विभाग -->
-        <p id="message-text" class="text-lg md:text-xl text-gray-600 mb-6">
-            हे एक साधे उदाहरण आहे. बटन क्लिक करून तुम्ही मजकूर बदलू शकता.
-        </p>
+        <!-- Question 3 -->
+        <div class="card mb-6">
+            <p class="question">Q3: जर 'MIND' चा कोड 'KGLB' असेल, तर 'ARGUE' चा कोड काय असेल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) YPESC</div>
+                <div class="option" data-answer="A">B) YQFTF</div>
+                <div class="option" data-answer="A">C) ZQFSF</div>
+                <div class="option" data-answer="A">D) ZPESD</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) YPESC</p>
+                <p><strong>स्पष्टीकरण:</strong> प्रत्येक अक्षराचा कोड त्याच्या मागील दुसऱ्या अक्षराचा वापर करून बनवलेला आहे. (M-2=K, I-2=G, N-2=L, D-2=B). त्याचप्रमाणे, 'ARGUE' चा कोड YPESC असेल. (A-2=Y, R-2=P, G-2=E, U-2=S, E-2=C)</p>
+            </div>
+        </div>
 
-        <!-- बटन -->
-        <button id="change-text-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-            मजकूर बदला
-        </button>
+        <!-- Question 4 -->
+        <div class="card mb-6">
+            <p class="question">Q4: योग्य दिशा ओळखा: एक माणूस १०मी पूर्वेकडे चालतो. उजवीकडे वळतो, १०मी चालतो. उजवीकडे वळतो, १०मी चालतो. डावीकडे वळतो, १०मी चालतो. तो त्याच्या सुरुवातीच्या बिंदूपासून किती दूर आणि कोणत्या दिशेला आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) 10m North</div>
+                <div class="option" data-answer="D">B) 10m East</div>
+                <div class="option" data-answer="D">C) 20m West</div>
+                <div class="option" data-answer="D">D) 20m South</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) 20m South</p>
+                <p><strong>स्पष्टीकरण:</strong></p>
+                <p>१. १०मी पूर्व.</p>
+                <p>२. उजवीकडे वळून १०मी (दक्षिण).</p>
+                <p>३. उजवीकडे वळून १०मी (पश्चिम).</p>
+                <p>४. डावीकडे वळून १०मी (दक्षिण).</p>
+                <p>तो सुरुवातीच्या बिंदूपासून दक्षिणेकडे एकूण (१०+१०)=२०मी दूर आहे.</p>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="card mb-6">
+            <p class="question">Q5: सादृश्य पूर्ण करा: 'Thermomenter : Temperature :: Barometer : ?'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) Humidity</div>
+                <div class="option" data-answer="D">B) Wind Speed</div>
+                <div class="option" data-answer="D">C) Altitude</div>
+                <div class="option" data-answer="D">D) Pressure</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) Pressure (दाब)</p>
+                <p><strong>स्पष्टीकरण:</strong> थर्मामीटरचा वापर तापमान मोजण्यासाठी होतो, तर बॅरोमीटरचा वापर हवेचा दाब मोजण्यासाठी होतो.</p>
+            </div>
+        </div>
+        
+        <!-- Question 6 -->
+        <div class="card mb-6">
+            <p class="question">Q6: विसंगत शब्द ओळखा: (Find the odd one out:)</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) Carrot (गाजर)</div>
+                <div class="option" data-answer="A">B) Potato (बटाटा)</div>
+                <div class="option" data-answer="A">C) Onion (कांदा)</div>
+                <div class="option" data-answer="A">D) Tomato (टोमॅटो)</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) Tomato (टोमॅटो)</p>
+                <p><strong>स्पष्टीकरण:</strong> गाजर, बटाटा आणि कांदा ही जमिनीखाली वाढणारी मुळे किंवा कंद आहेत, तर टोमॅटो जमिनीच्या वर वाढणारे फळ आहे.</p>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="card mb-6">
+            <p class="question">Q7: जर 'SISTER' चा कोड 'RHRSDQ' असेल, तर 'UNCLE' चा कोड काय असेल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) TMBKD</div>
+                <div class="option" data-answer="B">B) TMBKD</div>
+                <div class="option" data-answer="B">C) TBMKD</div>
+                <div class="option" data-answer="B">D) TMBJE</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) TMBKD</p>
+                <p><strong>स्पष्टीकरण:</strong> प्रत्येक अक्षराचा कोड त्याच्या मागील अक्षराचा वापर करून बनवलेला आहे. (S-1=R, I-1=H, S-1=R, T-1=S, E-1=D, R-1=Q). त्याचप्रमाणे, 'UNCLE' चा कोड TMBKD असेल. (U-1=T, N-1=M, C-1=B, L-1=K, E-1=D)</p>
+            </div>
+        </div>
+        
+        <!-- Question 8 -->
+        <div class="card mb-6">
+            <p class="question">Q8: विधाने: काही गाड्या बस आहेत. सर्व बस सायकल आहेत. निष्कर्ष I: काही गाड्या सायकल आहेत. निष्कर्ष II: काही सायकल गाड्या आहेत.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) फक्त निष्कर्ष I अनुसरण करतो</div>
+                <div class="option" data-answer="C">B) फक्त निष्कर्ष II अनुसरण करतो</div>
+                <div class="option" data-answer="C">C) I आणि II दोन्ही अनुसरण करतात</div>
+                <div class="option" data-answer="C">D) I किंवा II दोन्ही अनुसरण करत नाहीत</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) I आणि II दोन्ही अनुसरण करतात</p>
+                <p><strong>स्पष्टीकरण:</strong> वेन डायग्रामनुसार, 'गाड्या' आणि 'बस' यांच्यात काही संबंध आहे आणि 'बस' आणि 'सायकल' यांच्यात पूर्ण संबंध आहे. त्यामुळे 'गाड्या' आणि 'सायकल' यांच्यातही काही संबंध असेल. म्हणून दोन्ही निष्कर्ष योग्य आहेत.</p>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="card mb-6">
+            <p class="question">Q9: एका फोटोमधील एका माणसाकडे बोट दाखवून 'A' म्हणाला, 'त्याच्या भावाचा मुलगा माझ्या बायकोचा भाऊ आहे.' त्या माणसाचा 'A' सोबत काय संबंध आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) भाऊ</div>
+                <div class="option" data-answer="D">B) काका</div>
+                <div class="option" data-answer="D">C) मेहुणा</div>
+                <div class="option" data-answer="D">D) काका किंवा चुलत भाऊ</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) काका किंवा चुलत भाऊ</p>
+                <p><strong>स्पष्टीकरण:</strong> 'A' च्या बायकोचा भाऊ हा 'A' चा मेहुणा आहे. फोटोमधील माणसाचा भावाचा मुलगा 'A' चा मेहुणा आहे. याचा अर्थ फोटोमधील माणूस 'A' च्या बायकोचा वडील आहे, आणि 'A' च्या बायकोचा भाऊ हा 'A' चा मेहुणा आहे.</p>
+            </div>
+        </div>
+        
+        <!-- Question 10 -->
+        <div class="card mb-6">
+            <p class="question">Q10: मालिकेतील पुढील पद शोधा: B, E, H, K, N, ___.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) Q</div>
+                <div class="option" data-answer="A">B) P</div>
+                <div class="option" data-answer="A">C) R</div>
+                <div class="option" data-answer="A">D) O</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) Q</p>
+                <p><strong>स्पष्टीकरण:</strong> प्रत्येक अक्षरामध्ये दोन अक्षरे वगळली आहेत. (B + 3 = E, E + 3 = H, H + 3 = K, K + 3 = N, N + 3 = Q).</p>
+            </div>
+        </div>
+        
+        <!-- Question 11 -->
+        <div class="card mb-6">
+            <p class="question">Q11: A हा B पेक्षा दुप्पट वेगवान कामगार आहे. जर ते दोघे एकत्र काम पूर्ण करायला १२ दिवस घेतात, तर B एकट्याने ते काम किती दिवसांत पूर्ण करेल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 18 दिवस</div>
+                <div class="option" data-answer="C">B) 24 दिवस</div>
+                <div class="option" data-answer="C">C) 36 दिवस</div>
+                <div class="option" data-answer="C">D) 40 दिवस</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) 36 दिवस</p>
+                <p><strong>स्पष्टीकरण:</strong> A आणि B यांच्या कार्यक्षमतेचे प्रमाण २:१ आहे. त्यांनी एकत्र काम केल्यास, त्यांची एकूण कार्यक्षमता ३ युनिट आहे. एकूण काम = $12 \times 3 = 36$ युनिट. B ची कार्यक्षमता १ युनिट असल्यामुळे, त्याला ते काम पूर्ण करायला $36/1 = 36$ दिवस लागतील.</p>
+            </div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="card mb-6">
+            <p class="question">Q12: एक ट्रेन एका खांबाला १५ सेकंदात आणि १८० मी लांबीच्या प्लॅटफॉर्मला ३० सेकंदात ओलांडते. ट्रेनची लांबी किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) 150 मी</div>
+                <div class="option" data-answer="B">B) 180 मी</div>
+                <div class="option" data-answer="B">C) 200 मी</div>
+                <div class="option" data-answer="B">D) 240 मी</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) 180 मी</p>
+                <p><strong>स्पष्टीकरण:</strong> खांबाला ओलांडण्यासाठी लागणारा वेळ = ट्रेनची लांबी / वेग. प्लॅटफॉर्मला ओलांडण्यासाठी लागणारा वेळ = (ट्रेनची लांबी + प्लॅटफॉर्मची लांबी) / वेग.
+                ट्रेनचा वेग = $L/15$. $30 = (L+180)/(L/15)$. $30L = 15(L+180)$. $2L = L+180$. $L = 180$ मी.</p>
+            </div>
+        </div>
+        
+        <!-- Question 13 -->
+        <div class="card mb-6">
+            <p class="question">Q13: एका वस्तूची छापील किंमत (marked price) ५०० रुपये आहे. जर दुकानदार त्यावर १०% सूट देतो, तर त्याचा नफा २५% होतो. वस्तूची खरेदी किंमत (cost price) किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) Rs. 300</div>
+                <div class="option" data-answer="B">B) Rs. 360</div>
+                <div class="option" data-answer="B">C) Rs. 400</div>
+                <div class="option" data-answer="B">D) Rs. 420</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Rs. 360</p>
+                <p><strong>स्पष्टीकरण:</strong> छापील किंमत = ५०० रु. १०% सूट दिल्यावर विक्री किंमत (selling price) = $500 - (500 \times 0.10) = 450$ रु. २५% नफा झाला, म्हणजे खरेदी किंमत (CP) = $450 / 1.25 = 360$ रु.</p>
+            </div>
+        </div>
+        
+        <!-- Question 14 -->
+        <div class="card mb-6">
+            <p class="question">Q14: ५००० रुपयांवर १०% दराने २ वर्षांसाठी चक्रवाढ व्याज आणि सरळ व्याज यांच्यातील फरक किती असेल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) Rs. 40</div>
+                <div class="option" data-answer="C">B) Rs. 45</div>
+                <div class="option" data-answer="C">C) Rs. 50</div>
+                <div class="option" data-answer="C">D) Rs. 55</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) Rs. 50</p>
+                <p><strong>स्पष्टीकरण:</strong> दोन वर्षांसाठी चक्रवाढ व्याज आणि सरळ व्याज यांच्यातील फरक काढण्याचे सूत्र: $P (R/100)^2$. $5000 \times (10/100)^2 = 5000 \times (1/10) \times (1/10) = 50$ रु.</p>
+            </div>
+        </div>
+        
+        <!-- Question 15 -->
+        <div class="card mb-6">
+            <p class="question">Q15: A आणि B यांच्या वयाचे प्रमाण ४:५ आहे. ८ वर्षांनंतर त्यांच्या वयाचे प्रमाण ५:६ होईल. त्यांची सध्याची वये किती आहेत?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) 32 आणि 40 वर्षे</div>
+                <div class="option" data-answer="A">B) 36 आणि 45 वर्षे</div>
+                <div class="option" data-answer="A">C) 40 आणि 50 वर्षे</div>
+                <div class="option" data-answer="A">D) 44 आणि 55 वर्षे</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 32 आणि 40 वर्षे</p>
+                <p><strong>स्पष्टीकरण:</strong> सध्याचे वय $4x$ आणि $5x$ मानू. $$(4x+8)/(5x+8) = 5/6$$ $6(4x+8) = 5(5x+8)$ $24x + 48 = 25x + 40$ $x = 8$. A चे वय = $4 \times 8 = 32$ वर्षे, B चे वय = $5 \times 8 = 40$ वर्षे.</p>
+            </div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="card mb-6">
+            <p class="question">Q16: दोन नळ A आणि B एक टाकी अनुक्रमे १० आणि १५ तासांत भरू शकतात. एक तिसरा नळ C ती टाकी २० तासांत रिकामी करू शकतो. जर सर्व नळ एकाच वेळी उघडले, तर टाकी भरण्यासाठी किती वेळ लागेल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) 8.57 तास</div>
+                <div class="option" data-answer="B">B) 8.57 तास</div>
+                <div class="option" data-answer="B">C) 9.25 तास</div>
+                <div class="option" data-answer="B">D) 10 तास</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 8.57 तास</p>
+                <p><strong>स्पष्टीकरण:</strong> एका तासात नळ A $1/10$ भाग भरतो, B $1/15$ भाग भरतो आणि C $1/20$ भाग रिकामा करतो. तिन्ही नळ एकत्र काम केल्यास, एका तासात भरलेला भाग = $1/10 + 1/15 - 1/20 = (6+4-3)/60 = 7/60$. म्हणून, पूर्ण टाकी भरण्यासाठी लागणारा वेळ = $60/7$ तास ≈ ८.५७ तास.</p>
+            </div>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="card mb-6">
+            <p class="question">Q17: ६० लिटर दूध आणि पाण्याच्या मिश्रणात २०% पाणी आहे. मिश्रणात किती पाणी मिसळले पाहिजे जेणेकरून नवीन मिश्रणात पाणी २५% होईल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) 4 लिटर</div>
+                <div class="option" data-answer="A">B) 5 लिटर</div>
+                <div class="option" data-answer="A">C) 6 लिटर</div>
+                <div class="option" data-answer="A">D) 8 लिटर</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 4 लिटर</p>
+                <p><strong>स्पष्टीकरण:</strong> सुरुवातीच्या मिश्रणात दूध = $60 \times 80\% = 48$ लिटर आणि पाणी = $60 \times 20\% = 12$ लिटर. समजा $x$ लिटर पाणी मिसळले. नवीन मिश्रणात पाणी = $12+x$ आणि एकूण मिश्रण = $60+x$. $$(12+x)/(60+x) = 25/100 = 1/4$$ $4(12+x) = 60+x$. $48+4x = 60+x$. $3x = 12$. $x=4$ लिटर.</p>
+            </div>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="card mb-6">
+            <p class="question">Q18: १० विद्यार्थ्यांचे सरासरी वजन २८ किलो आहे. जर एक नवीन विद्यार्थी सामील झाला आणि सरासरी वजन २९ किलो झाले, तर नवीन विद्यार्थ्याचे वजन किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 30 किलो</div>
+                <div class="option" data-answer="C">B) 35 किलो</div>
+                <div class="option" data-answer="C">C) 39 किलो</div>
+                <div class="option" data-answer="C">D) 40 किलो</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) 39 किलो</p>
+                <p><strong>स्पष्टीकरण:</strong> १० विद्यार्थ्यांचे एकूण वजन = $10 \times 28 = 280$ किलो. ११ विद्यार्थ्यांचे एकूण वजन = $11 \times 29 = 319$ किलो. नवीन विद्यार्थ्याचे वजन = $319 - 280 = 39$ किलो.</p>
+            </div>
+        </div>
+        
+        <!-- Question 19 -->
+        <div class="card mb-6">
+            <p class="question">Q19: एका शहराची लोकसंख्या दरवर्षी १०% वाढते. जर आजची लोकसंख्या १,००,००० असेल, तर २ वर्षांनंतर लोकसंख्या किती असेल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 1,10,000</div>
+                <div class="option" data-answer="C">B) 1,20,000</div>
+                <div class="option" data-answer="C">C) 1,21,000</div>
+                <div class="option" data-answer="C">D) 1,25,000</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) 1,21,000</p>
+                <p><strong>स्पष्टीकरण:</strong> २ वर्षांनंतर लोकसंख्या = $100000 \times (1 + 10/100)^2 = 100000 \times (1.1)^2 = 100000 \times 1.21 = 121000$</p>
+            </div>
+        </div>
+        
+        <!-- Question 20 -->
+        <div class="card mb-6">
+            <p class="question">Q20: A, B आणि C यांनी अनुक्रमे रु. १०,०००, रु. २०,००० आणि रु. ३०,००० गुंतवून एक व्यवसाय सुरू केला. वर्षाच्या शेवटी, त्यांना रु. ६०,००० नफा झाला, तर C चा वाटा किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) Rs. 20,000</div>
+                <div class="option" data-answer="B">B) Rs. 30,000</div>
+                <div class="option" data-answer="B">C) Rs. 40,000</div>
+                <div class="option" data-answer="B">D) Rs. 50,000</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Rs. 30,000</p>
+                <p><strong>स्पष्टीकरण:</strong> गुंतवलेल्या रकमेचे प्रमाण = $10000 : 20000 : 30000 = 1:2:3$. नफ्याचा वाटा याच प्रमाणात वाटला जाईल. एकूण प्रमाण = $1+2+3=6$. C चा वाटा = $(3/6) \times 60000 = 30000$ रु.</p>
+            </div>
+        </div>
+        
+        <!-- Question 21 -->
+        <div class="card mb-6">
+            <p class="question">Q21: एका बॅगेत ३ लाल आणि ५ निळे चेंडू आहेत. जर दोन चेंडू यादृच्छिकपणे काढले, तर दोन्ही चेंडू लाल असण्याची संभाव्यता (probability) किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) 3/28</div>
+                <div class="option" data-answer="D">B) 5/28</div>
+                <div class="option" data-answer="D">C) 9/28</div>
+                <div class="option" data-answer="D">D) 1/28</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 3/28</p>
+                <p><strong>स्पष्टीकरण:</strong> एकूण चेंडू = ३ लाल + ५ निळे = ८. दोन चेंडू निवडण्याचे एकूण मार्ग = $C(8,2) = (8 \times 7) / 2 = 28$. दोन्ही लाल चेंडू निवडण्याचे मार्ग = $C(3,2) = 3$. म्हणून संभाव्यता = $3/28$.</p>
+            </div>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="card mb-6">
+            <p class="question">Q22: एका आयताचे क्षेत्रफळ २०० चौ.मी आहे. जर त्याची लांबी २० मी असेल, तर त्याची रुंदी किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 5 मी</div>
+                <div class="option" data-answer="C">B) 8 मी</div>
+                <div class="option" data-answer="C">C) 10 मी</div>
+                <div class="option" data-answer="C">D) 12 मी</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) 10 मी</p>
+                <p><strong>स्पष्टीकरण:</strong> आयताचे क्षेत्रफळ = लांबी x रुंदी. $200 = 20 \times$ रुंदी. रुंदी = $200 / 20 = 10$ मी.</p>
+            </div>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="card mb-6">
+            <p class="question">Q23: एका शंकूची त्रिज्या ७ सेमी आणि उंची २४ सेमी आहे. त्याचे एकूण पृष्ठफळ किती असेल? ($ \pi = 22/7 $)</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 704 cm²</div>
+                <div class="option" data-answer="C">B) 550 cm²</div>
+                <div class="option" data-answer="C">C) 704 cm²</div>
+                <div class="option" data-answer="C">D) 748 cm²</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) 704 cm²</p>
+                <p><strong>स्पष्टीकरण:</strong> तिरकस उंची $l = \sqrt{r^2 + h^2} = \sqrt{7^2 + 24^2} = \sqrt{49 + 576} = \sqrt{625} = 25$ सेमी. एकूण पृष्ठफळ = $ \pi r (r + l) = (22/7) \times 7 \times (7 + 25) = 22 \times 32 = 704$ चौ.सेमी.</p>
+            </div>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="card mb-6">
+            <p class="question">Q24: ८, ११, १३, १६, २०, २४ या संख्यांची सरासरी किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 15</div>
+                <div class="option" data-answer="C">B) 16</div>
+                <div class="option" data-answer="C">C) 15.33</div>
+                <div class="option" data-answer="C">D) 15.67</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) 15.33</p>
+                <p><strong>स्पष्टीकरण:</strong> सरासरी = एकूण संख्यांची बेरीज / एकूण संख्या. सरासरी = $(8+11+13+16+20+24) / 6 = 92 / 6 = 15.33$</p>
+            </div>
+        </div>
+        
+        <!-- Question 25 -->
+        <div class="card mb-6">
+            <p class="question">Q25: A, B आणि C यांच्या सध्याच्या वयाची बेरीज ९० वर्षे आहे. १० वर्षांपूर्वी त्यांच्या वयाचे प्रमाण १:२:३ होते. A चे सध्याचे वय किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) 20 वर्षे</div>
+                <div class="option" data-answer="A">B) 30 वर्षे</div>
+                <div class="option" data-answer="A">C) 40 वर्षे</div>
+                <div class="option" data-answer="A">D) 50 वर्षे</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 20 वर्षे</p>
+                <p><strong>स्पष्टीकरण:</strong> १० वर्षांपूर्वी त्यांच्या वयाची बेरीज = $90 - (3 \times 10) = 60$ वर्षे. प्रमाण १:२:३ आहे, म्हणजे $x+2x+3x = 60 \implies 6x=60 \implies x=10$. १० वर्षांपूर्वी A चे वय १० वर्षे होते. म्हणून, सध्याचे वय = $10+10 = 20$ वर्षे.</p>
+            </div>
+        </div>
+        
+        <!-- Question 26 -->
+        <div class="card mb-6">
+            <p class="question">Q26: १२ पुरुष किंवा १५ स्त्रिया एक काम २० दिवसांत पूर्ण करू शकतात. १० पुरुष आणि ६ स्त्रिया तेच काम किती दिवसांत पूर्ण करतील?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 10 दिवस</div>
+                <div class="option" data-answer="C">B) 12 दिवस</div>
+                <div class="option" data-answer="C">C) 15 दिवस</div>
+                <div class="option" data-answer="C">D) 18 दिवस</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) 15 दिवस</p>
+                <p><strong>स्पष्टीकरण:</strong> $12M = 15W \implies 4M = 5W \implies M = 5/4W$. $10M + 6W = 10(5/4)W + 6W = (25/2)W + 6W = (25+12)/2 W = 37/2 W$. १५ स्त्रिया २० दिवसांत काम करतात. म्हणजे एकूण काम = $15 \times 20 = 300$ युनिट. $37/2 W$ हे काम $300 / (37/2) = 600/37 \approx 16.2$ दिवस.</p>
+            </div>
+        </div>
+        
+        <!-- Question 27 -->
+        <div class="card mb-6">
+            <p class="question">Q27: एका वस्तूवर १०% आणि २०% च्या दोन क्रमागत सूट (successive discounts) दिल्यावर, एकूण सूट किती असेल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) 28%</div>
+                <div class="option" data-answer="A">B) 30%</div>
+                <div class="option" data-answer="A">C) 32%</div>
+                <div class="option" data-answer="A">D) 25%</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 28%</p>
+                <p><strong>स्पष्टीकरण:</strong> दोन क्रमागत सूटसाठी सूत्र: $A + B - (A \times B) / 100$. $10 + 20 - (10 \times 20) / 100 = 30 - 2 = 28$%. किंवा, १०० रु. वर १०% सूट म्हणजे ९० रु. त्यावर २०% सूट म्हणजे $90 - 18 = 72$ रु. एकूण सूट = $100 - 72 = 28$ रु, म्हणजे २८%.</p>
+            </div>
+        </div>
+        
+        <!-- Question 28 -->
+        <div class="card mb-6">
+            <p class="question">Q28: एका बोटीचा वेग स्थिर पाण्यात १० किमी/तास आहे आणि प्रवाहाचा वेग २ किमी/तास आहे. बोट प्रवाहाच्या विरुद्ध दिशेने (upstream) २४ किमी जाण्यासाठी किती वेळ घेईल?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) 2 तास</div>
+                <div class="option" data-answer="B">B) 3 तास</div>
+                <div class="option" data-answer="B">C) 4 तास</div>
+                <div class="option" data-answer="B">D) 5 तास</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) 3 तास</p>
+                <p><strong>स्पष्टीकरण:</strong> प्रवाहाच्या विरुद्ध दिशेने वेग = स्थिर पाण्यातील वेग - प्रवाहाचा वेग = $10 - 2 = 8$ किमी/तास. लागणारा वेळ = अंतर / वेग = $24 / 8 = 3$ तास.</p>
+            </div>
+        </div>
+
+        <!-- Question 29 -->
+        <div class="card mb-6">
+            <p class="question">Q29: दोन संख्यांचे प्रमाण ३:४ आहे आणि त्यांची बेरीज ७० आहे. लहान संख्या कोणती?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) 30</div>
+                <div class="option" data-answer="A">B) 40</div>
+                <div class="option" data-answer="A">C) 50</div>
+                <div class="option" data-answer="A">D) 60</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 30</p>
+                <p><strong>स्पष्टीकरण:</strong> संख्या $3x$ आणि $4x$ मानू. $3x + 4x = 70 \implies 7x = 70 \implies x = 10$. लहान संख्या $3x = 3 \times 10 = 30$.</p>
+            </div>
+        </div>
+        
+        <!-- Question 30 -->
+        <div class="card mb-6">
+            <p class="question">Q30: एका त्रिकोणामधील कोनांचे प्रमाण २:३:४ आहे. सर्वात लहान कोनाचे माप किती आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) 40°</div>
+                <div class="option" data-answer="A">B) 50°</div>
+                <div class="option" data-answer="A">C) 60°</div>
+                <div class="option" data-answer="A">D) 80°</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 40°</p>
+                <p><strong>स्पष्टीकरण:</strong> त्रिकोणाच्या तीन कोनांची बेरीज १८०° असते. कोनांचे माप $2x, 3x, 4x$ मानू. $2x+3x+4x=180 \implies 9x=180 \implies x=20$. सर्वात लहान कोन = $2x = 2 \times 20 = 40$°.</p>
+            </div>
+        </div>
+
+        <!-- Question 31 -->
+        <div class="card mb-6">
+            <p class="question">Q31: 'Efficacious' या शब्दाचा समानार्थी शब्द शोधा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) Ineffective</div>
+                <div class="option" data-answer="B">B) Effective</div>
+                <div class="option" data-answer="B">C) Weak</div>
+                <div class="option" data-answer="B">D) Unproductive</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Effective (प्रभावी)</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Efficacious' म्हणजे अपेक्षित परिणाम देण्यास सक्षम असणे, म्हणजेच 'Effective'.</p>
+            </div>
+        </div>
+        
+        <!-- Question 32 -->
+        <div class="card mb-6">
+            <p class="question">Q32: 'Verbose' या शब्दाचा विरुद्धार्थी शब्द शोधा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) Wordy</div>
+                <div class="option" data-answer="B">B) Concise</div>
+                <div class="option" data-answer="B">C) Talkative</div>
+                <div class="option" data-answer="B">D) Lengthy</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Concise (संक्षिप्त)</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Verbose' म्हणजे खूप जास्त शब्दांचा वापर करणे, तर 'Concise' म्हणजे कमी शब्दांत स्पष्टपणे व्यक्त करणे.</p>
+            </div>
+        </div>
+        
+        <!-- Question 33 -->
+        <div class="card mb-6">
+            <p class="question">Q33: योग्य phrasal verb निवडा: He decided to ______ his trip until next month.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) put off</div>
+                <div class="option" data-answer="C">B) put up</div>
+                <div class="option" data-answer="C">C) put down</div>
+                <div class="option" data-answer="C">D) put on</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) put off</p>
+                <p><strong>स्पष्टीकरण:</strong> 'put off' म्हणजे पुढे ढकलणे (postpone).</p>
+            </div>
+        </div>
+        
+        <!-- Question 34 -->
+        <div class="card mb-6">
+            <p class="question">Q34: 'A drop in the ocean' या वाक्प्रचाराचा अर्थ काय आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) एक खूप लहान आणि क्षुल्लक भाग</div>
+                <div class="option" data-answer="A">B) एक मोठा धोका</div>
+                <div class="option" data-answer="A">C) एक महत्त्वाची उपलब्धी</div>
+                <div class="option" data-answer="A">D) एक रहस्य</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) एक खूप लहान आणि क्षुल्लक भाग</p>
+                <p><strong>स्पष्टीकरण:</strong> याचा अर्थ, मोठ्या गोष्टीच्या तुलनेत खूप लहान किंवा नगण्य भाग.</p>
+            </div>
+        </div>
+
+        <!-- Question 35 -->
+        <div class="card mb-6">
+            <p class="question">Q35: जर 'I had known about the party, I would have come.' या वाक्यात योग्य क्रियापद निवडा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) If I know</div>
+                <div class="option" data-answer="C">B) If I would have known</div>
+                <div class="option" data-answer="C">C) If I had known</div>
+                <div class="option" data-answer="C">D) If I am known</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) If I had known</p>
+                <p><strong>स्पष्टीकरण:</strong> हे एक 'Third Conditional' वाक्य आहे, जे भूतकाळातील एक अवास्तव परिस्थिती दर्शवते. या रचनेत, 'if' clause मध्ये 'had' सोबत Past Participle (had known) वापरले जाते.</p>
+            </div>
+        </div>
+
+        <!-- Question 36 -->
+        <div class="card mb-6">
+            <p class="question">Q36: पुढील वाक्यातील त्रुटी ओळखा: 'He is one of the best student in our class.'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) He is</div>
+                <div class="option" data-answer="C">B) one of the</div>
+                <div class="option" data-answer="C">C) best student</div>
+                <div class="option" data-answer="C">D) in our class</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) best student</p>
+                <p><strong>स्पष्टीकरण:</strong> 'one of the' नंतर नेहमी अनेकवचनी नाम (plural noun) वापरले जाते. त्यामुळे 'student' ऐवजी 'students' असावे.</p>
+            </div>
+        </div>
+        
+        <!-- Question 37 -->
+        <div class="card mb-6">
+            <p class="question">Q37: 'A place where bees are kept' या वाक्यासाठी एक शब्द निवडा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) Apiary</div>
+                <div class="option" data-answer="A">B) Aviary</div>
+                <div class="option" data-answer="A">C) Aquarium</div>
+                <div class="option" data-answer="A">D) Nursery</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) Apiary (मधमाशापालन केंद्र)</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Apiary' म्हणजे मधमाशा ठेवण्याची जागा. 'Aviary' म्हणजे पक्षी ठेवण्याची जागा.</p>
+            </div>
+        </div>
+        
+        <!-- Question 38 -->
+        <div class="card mb-6">
+            <p class="question">Q38: वाक्याचे योग्य passive voice रूप निवडा: 'The students are playing cricket.'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) Cricket is being played by the students.</div>
+                <div class="option" data-answer="A">B) Cricket was being played by the students.</div>
+                <div class="option" data-answer="A">C) Cricket is played by the students.</div>
+                <div class="option" data-answer="A">D) The students were playing cricket.</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) Cricket is being played by the students.</p>
+                <p><strong>स्पष्टीकरण:</strong> Present Continuous Tense मधील Active Voice (is/are + verb-ing) चे Passive Voice (is/are + being + verb-ed) मध्ये रूपांतर केले जाते.</p>
+            </div>
+        </div>
+        
+        <!-- Question 39 -->
+        <div class="card mb-6">
+            <p class="question">Q39: पुढील वाक्य indirect speech मध्ये रूपांतरित करा: She said, "I have finished my work."</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) She said that she has finished her work.</div>
+                <div class="option" data-answer="B">B) She said that she had finished her work.</div>
+                <div class="option" data-answer="B">C) She said that I had finished my work.</div>
+                <div class="option" data-answer="B">D) She said that she will finish her work.</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) She said that she had finished her work.</p>
+                <p><strong>स्पष्टीकरण:</strong> Direct speech मधील Present Perfect Tense (have finished) चे Indirect speech मध्ये Past Perfect Tense (had finished) मध्ये रूपांतर केले जाते.</p>
+            </div>
+        </div>
+
+        <!-- Question 40 -->
+        <div class="card mb-6">
+            <p class="question">Q40: रिकामी जागा योग्य preposition ने भरा: 'He is fond ___ music.'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) of</div>
+                <div class="option" data-answer="A">B) with</div>
+                <div class="option" data-answer="A">C) for</div>
+                <div class="option" data-answer="A">D) in</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) of</p>
+                <p><strong>स्पष्टीकरण:</strong> 'fond' या adjective सोबत 'of' हे preposition वापरले जाते.</p>
+            </div>
+        </div>
+        
+        <!-- Question 41 -->
+        <div class="card mb-6">
+            <p class="question">Q41: वाक्य पूर्ण करा: 'He ran as if he ______ a ghost.'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) saw</div>
+                <div class="option" data-answer="D">B) has seen</div>
+                <div class="option" data-answer="D">C) would see</div>
+                <div class="option" data-answer="D">D) had seen</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) had seen</p>
+                <p><strong>स्पष्टीकरण:</strong> 'as if' नंतर भूतकाळातील काल्पनिक परिस्थिती दर्शवण्यासाठी Past Perfect Tense वापरला जातो.</p>
+            </div>
+        </div>
+        
+        <!-- Question 42 -->
+        <div class="card mb-6">
+            <p class="question">Q42: 'Candid' या शब्दाचा समानार्थी शब्द शोधा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) Frank</div>
+                <div class="option" data-answer="A">B) Secretive</div>
+                <div class="option" data-answer="A">C) Deceitful</div>
+                <div class="option" data-answer="A">D) Reserved</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) Frank (प्रामाणिक)</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Candid' म्हणजे प्रामाणिक, सरळ आणि स्पष्ट. 'Frank' चा अर्थही तोच आहे.</p>
+            </div>
+        </div>
+
+        <!-- Question 43 -->
+        <div class="card mb-6">
+            <p class="question">Q43: 'Perilous' या शब्दाचा विरुद्धार्थी शब्द शोधा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) Dangerous</div>
+                <div class="option" data-answer="B">B) Safe</div>
+                <div class="option" data-answer="B">C) Risky</div>
+                <div class="option" data-answer="B">D) Hazardous</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Safe (सुरक्षित)</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Perilous' म्हणजे धोकादायक, तर 'Safe' म्हणजे सुरक्षित.</p>
+            </div>
+        </div>
+        
+        <!-- Question 44 -->
+        <div class="card mb-6">
+            <p class="question">Q44: 'To call off' या phrasal verb चा अर्थ काय आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) भेट देणे</div>
+                <div class="option" data-answer="C">B) मागणी करणे</div>
+                <div class="option" data-answer="C">C) रद्द करणे</div>
+                <div class="option" data-answer="C">D) मोठ्याने ओरडणे</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) रद्द करणे</p>
+                <p><strong>स्पष्टीकरण:</strong> 'To call off' म्हणजे एखादा कार्यक्रम किंवा योजना रद्द करणे (to cancel).</p>
+            </div>
+        </div>
+
+        <!-- Question 45 -->
+        <div class="card mb-6">
+            <p class="question">Q45: 'Once in a blue moon' या वाक्प्रचाराचा अर्थ काय आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) खूप क्वचितच</div>
+                <div class="option" data-answer="A">B) खूप वेळा</div>
+                <div class="option" data-answer="A">C) रात्री</div>
+                <div class="option" data-answer="A">D) अचानकपणे</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) खूप क्वचितच</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Once in a blue moon' म्हणजे 'very rarely'.</p>
+            </div>
+        </div>
+        
+        <!-- Question 46 -->
+        <div class="card mb-6">
+            <p class="question">Q46: योग्य स्पेलिंग निवडा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) Embarass</div>
+                <div class="option" data-answer="D">B) Embarrass</div>
+                <div class="option" data-answer="D">C) Embrass</div>
+                <div class="option" data-answer="D">D) Embarasss</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Embarrass</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Embarrass' हे योग्य स्पेलिंग आहे. यात 'r' आणि 's' दोन्ही दोन वेळा येतात.</p>
+            </div>
+        </div>
+        
+        <!-- Question 47 -->
+        <div class="card mb-6">
+            <p class="question">Q47: रिकामी जागा योग्य शब्दाने भरा: 'The jury was ______ in its verdict.'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) unanimous</div>
+                <div class="option" data-answer="A">B) divided</div>
+                <div class="option" data-answer="A">C) impartial</div>
+                <div class="option" data-answer="A">D) biased</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) unanimous (सर्वसंमत)</p>
+                <p><strong>स्पष्टीकरण:</strong> 'unanimous' म्हणजे सर्वांनी एकमताने घेतलेला निर्णय.</p>
+            </div>
+        </div>
+
+        <!-- Question 48 -->
+        <div class="card mb-6">
+            <p class="question">Q48: वाक्यातील underlined शब्दाचा प्रकार (part of speech) ओळखा: 'The book on the table is **mine**.'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) Adjective</div>
+                <div class="option" data-answer="B">B) Pronoun</div>
+                <div class="option" data-answer="B">C) Noun</div>
+                <div class="option" data-answer="B">D) Adverb</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Pronoun (सर्वनाम)</p>
+                <p><strong>स्पष्टीकरण:</strong> 'mine' हे 'my book' च्या जागी वापरले आहे, म्हणून ते एक possessive pronoun आहे.</p>
+            </div>
+        </div>
+        
+        <!-- Question 49 -->
+        <div class="card mb-6">
+            <p class="question">Q49: योग्य article निवडा: 'He is ___ honest man.'</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) a</div>
+                <div class="option" data-answer="C">B) the</div>
+                <div class="option" data-answer="C">C) an</div>
+                <div class="option" data-answer="C">D) No article</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) an</p>
+                <p><strong>स्पष्टीकरण:</strong> 'honest' हे अक्षर 'h' पासून सुरू होत असले तरी त्याचा उच्चार 'o' (vowel sound) ने सुरू होतो, म्हणून 'an' वापरला जातो.</p>
+            </div>
+        </div>
+
+        <!-- Question 50 -->
+        <div class="card mb-6">
+            <p class="question">Q50: वाक्यातील योग्य क्रम निवडा: I. he went to the bank. II. on the way to the market. III. to withdraw some money.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) I, II, III</div>
+                <div class="option" data-answer="B">B) I, III, II</div>
+                <div class="option" data-answer="B">C) II, I, III</div>
+                <div class="option" data-answer="B">D) III, I, II</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) I, III, II</p>
+                <p><strong>स्पष्टीकरण:</strong> योग्य क्रम: 'He went to the bank (I) to withdraw some money (III) on the way to the market (II)'.</p>
+            </div>
+        </div>
+
+        <!-- Question 51 -->
+        <div class="card mb-6">
+            <p class="question">Q51: 'पानीपतची तिसरी लढाई' कोणत्या वर्षी झाली?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) 1761</div>
+                <div class="option" data-answer="A">B) 1757</div>
+                <div class="option" data-answer="A">C) 1526</div>
+                <div class="option" data-answer="A">D) 1556</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) 1761</p>
+                <p><strong>स्पष्टीकरण:</strong> पानीपतची तिसरी लढाई १४ जानेवारी १७६१ रोजी मराठा साम्राज्य आणि अफगाण आक्रमणकर्ता अहमद शाह अब्दाली यांच्यात झाली.</p>
+            </div>
+        </div>
+
+        <!-- Question 52 -->
+        <div class="card mb-6">
+            <p class="question">Q52: भारताचे राष्ट्रीय जलचर (National Aquatic Animal) कोणते आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) गंगा नदीतील डॉल्फिन</div>
+                <div class="option" data-answer="B">B) गंगा नदीतील डॉल्फिन</div>
+                <div class="option" data-answer="B">C) मगर</div>
+                <div class="option" data-answer="B">D) व्हेल</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) गंगा नदीतील डॉल्फिन</p>
+                <p><strong>स्पष्टीकरण:</strong> भारत सरकारने २००९ मध्ये गंगा नदीतील डॉल्फिनला भारताचे राष्ट्रीय जलचर म्हणून घोषित केले.</p>
+            </div>
+        </div>
+        
+        <!-- Question 53 -->
+        <div class="card mb-6">
+            <p class="question">Q53: भारतीय संविधानाच्या कोणत्या कलमात (article) 'समान नागरी कायदा' (Uniform Civil Code) चा उल्लेख आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) कलम ४०</div>
+                <div class="option" data-answer="D">B) कलम ४४</div>
+                <div class="option" data-answer="D">C) कलम ४५</div>
+                <div class="option" data-answer="D">D) कलम ५०</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) कलम ४४</p>
+                <p><strong>स्पष्टीकरण:</strong> भारतीय संविधानाचे कलम ४४ 'समान नागरी कायदा' लागू करण्याचा प्रयत्न करण्यास राज्याला निर्देशित करते.</p>
+            </div>
+        </div>
+
+        <!-- Question 54 -->
+        <div class="card mb-6">
+            <p class="question">Q54: पेशीतील 'ऊर्जा केंद्र' (powerhouse of the cell) म्हणून कशाला ओळखले जाते?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) केंद्रक (Nucleus)</div>
+                <div class="option" data-answer="B">B) मायटोकाँड्रिया (Mitochondria)</div>
+                <div class="option" data-answer="B">C) रायबोसोम (Ribosome)</div>
+                <div class="option" data-answer="B">D) लायसोसोम (Lysosome)</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) मायटोकाँड्रिया (Mitochondria)</p>
+                <p><strong>स्पष्टीकरण:</strong> मायटोकाँड्रिया हे पेशीतील ऊर्जा निर्माण करणारे केंद्र आहे, जिथे ATP (Adenosine Triphosphate) तयार होते.</p>
+            </div>
+        </div>
+        
+        <!-- Question 55 -->
+        <div class="card mb-6">
+            <p class="question">Q55: २०२४ मध्ये 'फ्रान्स' मध्ये आयोजित करण्यात आलेले ऑलिंपिक खेळ कोणत्या शहरात झाले?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) पॅरिस</div>
+                <div class="option" data-answer="B">B) पॅरिस</div>
+                <div class="option" data-answer="B">C) पॅरिस</div>
+                <div class="option" data-answer="B">D) पॅरिस</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) पॅरिस</p>
+                <p><strong>स्पष्टीकरण:</strong> २०२४ चे उन्हाळी ऑलिंपिक खेळ 'पॅरिस' मध्ये आयोजित करण्यात आले होते.</p>
+            </div>
+        </div>
+        
+        <!-- Question 56 -->
+        <div class="card mb-6">
+            <p class="question">Q56: 'रेपो दर' (Repo Rate) म्हणजे काय?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) ज्या दराने RBI इतर बँकांना कर्ज देते</div>
+                <div class="option" data-answer="A">B) ज्या दराने इतर बँका RBI ला कर्ज देतात</div>
+                <div class="option" data-answer="A">C) बँक आपल्या ग्राहकांना देते तो दर</div>
+                <div class="option" data-answer="A">D) ज्या दराने सरकार कर्ज देते</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) ज्या दराने RBI इतर बँकांना कर्ज देते</p>
+                <p><strong>स्पष्टीकरण:</strong> रेपो दर म्हणजे ज्या दराने भारतीय रिझर्व्ह बँक (RBI) इतर व्यावसायिक बँकांना अल्प मुदतीसाठी कर्ज देते.</p>
+            </div>
+        </div>
+
+        <!-- Question 57 -->
+        <div class="card mb-6">
+            <p class="question">Q57: २०१६ मध्ये, नोटबंदीनंतर (Demonetisation) कोणती नवीन नोट चलनात आणली गेली?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) 50 रुपये</div>
+                <div class="option" data-answer="B">B) 2000 रुपये</div>
+                <div class="option" data-answer="B">C) 500 रुपये</div>
+                <div class="option" data-answer="B">D) 200 रुपये</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) 2000 रुपये</p>
+                <p><strong>स्पष्टीकरण:</strong> ८ नोव्हेंबर २०१६ रोजी पंतप्रधान नरेंद्र मोदी यांनी ५०० आणि १००० रुपयांच्या नोटा रद्द केल्या आणि त्यानंतर २,००० रुपयांची नवीन नोट चलनात आणली.</p>
+            </div>
+        </div>
+        
+        <!-- Question 58 -->
+        <div class="card mb-6">
+            <p class="question">Q58: 'कथ्थक' (Kathak) हे कोणत्या राज्याचे शास्त्रीय नृत्य आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) उत्तर प्रदेश</div>
+                <div class="option" data-answer="A">B) केरळ</div>
+                <div class="option" data-answer="A">C) तामिळनाडू</div>
+                <div class="option" data-answer="A">D) आंध्र प्रदेश</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) उत्तर प्रदेश</p>
+                <p><strong>स्पष्टीकरण:</strong> कथ्थक हे उत्तर प्रदेशमधील एक महत्त्वाचे शास्त्रीय नृत्य आहे.</p>
+            </div>
+        </div>
+
+        <!-- Question 59 -->
+        <div class="card mb-6">
+            <p class="question">Q59: 'जागतिक आरोग्य संघटना' (WHO) चे मुख्यालय कोठे आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) जिनिव्हा, स्वित्झर्लंड</div>
+                <div class="option" data-answer="A">B) न्यूयॉर्क, अमेरिका</div>
+                <div class="option" data-answer="A">C) पॅरिस, फ्रान्स</div>
+                <div class="option" data-answer="A">D) लंडन, युनायटेड किंगडम</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) जिनिव्हा, स्वित्झर्लंड</p>
+                <p><strong>स्पष्टीकरण:</strong> जागतिक आरोग्य संघटना (World Health Organization) चे मुख्यालय जिनिव्हा, स्वित्झर्लंड येथे आहे.</p>
+            </div>
+        </div>
+        
+        <!-- Question 60 -->
+        <div class="card mb-6">
+            <p class="question">Q60: भारतीय संविधानाचे 'कलम ३७०' (Article 370) कोणत्या राज्याशी संबंधित होते?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) पंजाब</div>
+                <div class="option" data-answer="C">B) सिक्कीम</div>
+                <div class="option" data-answer="C">C) जम्मू आणि काश्मीर</div>
+                <div class="option" data-answer="C">D) नागालँड</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) जम्मू आणि काश्मीर</p>
+                <p><strong>स्पष्टीकरण:</strong> कलम ३७० हे जम्मू आणि काश्मीर राज्याला विशेष दर्जा देत होते, जे २०१९ मध्ये रद्द करण्यात आले.</p>
+            </div>
+        </div>
+        
+        <!-- Question 61 -->
+        <div class="card mb-6">
+            <p class="question">Q61: 'HTTP' चे पूर्ण रूप काय आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) Hypertext Transfer Protocol</div>
+                <div class="option" data-answer="B">B) Hypertext Transfer Protocol</div>
+                <div class="option" data-answer="B">C) Hyperlink Text Protocol</div>
+                <div class="option" data-answer="B">D) High Transfer Protocol</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) Hypertext Transfer Protocol</p>
+                <p><strong>स्पष्टीकरण:</strong> HTTP हे वर्ल्ड वाइड वेबवरील डेटा कम्युनिकेशनसाठी वापरले जाणारे प्रोटोकॉल आहे.</p>
+            </div>
+        </div>
+        
+        <!-- Question 62 -->
+        <div class="card mb-6">
+            <p class="question">Q62: खालीलपैकी कोणते आउटपुट डिव्हाइस (Output Device) नाही?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) प्रिंटर</div>
+                <div class="option" data-answer="C">B) मॉनिटर</div>
+                <div class="option" data-answer="C">C) कीबोर्ड</div>
+                <div class="option" data-answer="C">D) स्पीकर</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) कीबोर्ड</p>
+                <p><strong>स्पष्टीकरण:</strong> कीबोर्ड हे एक इनपुट डिव्हाइस आहे, ज्याचा वापर डेटा आणि कमांड्स संगणकात एंटर करण्यासाठी केला जातो.</p>
+            </div>
+        </div>
+
+        <!-- Question 63 -->
+        <div class="card mb-6">
+            <p class="question">Q63: 'TCP/IP' प्रोटोकॉलचा वापर कशासाठी होतो?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) डेटा पॅकेट पाठवण्यासाठी</div>
+                <div class="option" data-answer="A">B) डेटा स्टोर करण्यासाठी</div>
+                <div class="option" data-answer="A">C) फाइल्स स्कॅन करण्यासाठी</div>
+                <div class="option" data-answer="A">D) प्रोग्राम रन करण्यासाठी</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) डेटा पॅकेट पाठवण्यासाठी</p>
+                <p><strong>स्पष्टीकरण:</strong> TCP/IP (Transmission Control Protocol/Internet Protocol) हे इंटरनेटवर डेटा पॅकेटची देवाणघेवाण करण्यासाठी वापरले जाते.</p>
+            </div>
+        </div>
+        
+        <!-- Question 64 -->
+        <div class="card mb-6">
+            <p class="question">Q64: दुसऱ्या पिढीच्या संगणकांमध्ये (Second Generation Computers) कोणता घटक वापरला गेला?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) व्हॅक्यूम ट्यूब</div>
+                <div class="option" data-answer="B">B) ट्रान्झिस्टर</div>
+                <div class="option" data-answer="B">C) इंटीग्रेटेड सर्किट (IC)</div>
+                <div class="option" data-answer="B">D) मायक्रोप्रोसेसर</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) ट्रान्झिस्टर</p>
+                <p><strong>स्पष्टीकरण:</strong> दुसऱ्या पिढीच्या संगणकांमध्ये व्हॅक्यूम ट्यूब ऐवजी ट्रान्झिस्टरचा वापर करण्यात आला.</p>
+            </div>
+        </div>
+
+        <!-- Question 65 -->
+        <div class="card mb-6">
+            <p class="question">Q65: विंडोज ऑपरेटिंग सिस्टममध्ये 'फाइल एक्सप्लोरर' उघडण्यासाठी कोणती शॉर्टकट की वापरली जाते?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) Win + E</div>
+                <div class="option" data-answer="A">B) Ctrl + E</div>
+                <div class="option" data-answer="A">C) Alt + E</div>
+                <div class="option" data-answer="A">D) Shift + E</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) Win + E</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Win' (Windows) की आणि 'E' की एकत्र दाबल्यास विंडोजमध्ये 'फाइल एक्सप्लोरर' उघडते.</p>
+            </div>
+        </div>
+
+        <!-- Question 66 -->
+        <div class="card mb-6">
+            <p class="question">Q66: डेटाबेसमध्ये (database) 'Primary Key' चा उद्देश काय असतो?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="B">A) डेटा गोपनीय ठेवण्यासाठी</div>
+                <div class="option" data-answer="B">B) प्रत्येक रेकॉर्डला विशिष्टपणे ओळखण्यासाठी</div>
+                <div class="option" data-answer="B">C) डेटा एन्क्रिप्ट करण्यासाठी</div>
+                <div class="option" data-answer="B">D) डेटाची कॉपी करण्यासाठी</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> B) प्रत्येक रेकॉर्डला विशिष्टपणे ओळखण्यासाठी</p>
+                <p><strong>स्पष्टीकरण:</strong> 'Primary Key' हे एक फील्ड किंवा फील्डचा संच आहे जे डेटाबेसमधील प्रत्येक रेकॉर्डला अद्वितीयपणे ओळखते.</p>
+            </div>
+        </div>
+
+        <!-- Question 67 -->
+        <div class="card mb-6">
+            <p class="question">Q67: खालीलपैकी कोणता एक वेब ब्राउझर नाही?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) Google Chrome</div>
+                <div class="option" data-answer="D">B) Mozilla Firefox</div>
+                <div class="option" data-answer="D">C) Microsoft Edge</div>
+                <div class="option" data-answer="D">D) Microsoft Word</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) Microsoft Word</p>
+                <p><strong>स्पष्टीकरण:</strong> मायक्रोसॉफ्ट वर्ड हे एक वर्ड प्रोसेसिंग सॉफ्टवेअर आहे, तर इतर सर्व वेब ब्राउझर आहेत.</p>
+            </div>
+        </div>
+
+        <!-- Question 68 -->
+        <div class="card mb-6">
+            <p class="question">Q68: खालीलपैकी कोणती अस्थिर (volatile) मेमरी आहे?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="A">A) RAM</div>
+                <div class="option" data-answer="A">B) ROM</div>
+                <div class="option" data-answer="A">C) Hard Disk</div>
+                <div class="option" data-answer="A">D) SSD</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> A) RAM</p>
+                <p><strong>स्पष्टीकरण:</strong> RAM (Random Access Memory) ही अस्थिर (volatile) मेमरी आहे, कारण संगणक बंद झाल्यावर त्यातील डेटा नष्ट होतो.</p>
+            </div>
+        </div>
+        
+        <!-- Question 69 -->
+        <div class="card mb-6">
+            <p class="question">Q69: '1011' या बायनरी संख्येचे (binary number) डेसिमल (decimal) मध्ये रूपांतर करा.</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="C">A) 9</div>
+                <div class="option" data-answer="C">B) 10</div>
+                <div class="option" data-answer="C">C) 11</div>
+                <div class="option" data-answer="C">D) 12</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> C) 11</p>
+                <p><strong>स्पष्टीकरण:</strong> $1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 8 + 0 + 2 + 1 = 11$.</p>
+            </div>
+        </div>
+
+        <!-- Question 70 -->
+        <div class="card mb-6">
+            <p class="question">Q70: कोणता सायबर हल्ला (cyber attack) वापरकर्त्याच्या कीबोर्डवरील प्रत्येक keystroke रेकॉर्ड करतो?</p>
+            <div class="flex flex-col space-y-2">
+                <div class="option" data-answer="D">A) Phishing</div>
+                <div class="option" data-answer="D">B) Malware</div>
+                <div class="option" data-answer="D">C) Adware</div>
+                <div class="option" data-answer="D">D) Keylogger</div>
+            </div>
+            <button class="correct-btn mt-4" onclick="showAnswer(this)">उत्तर आणि स्पष्टीकरण पहा</button>
+            <div class="explanation hide">
+                <p><strong>उत्तर:</strong> D) Keylogger</p>
+                <p><strong>स्पष्टीकरण:</strong> कीलॉगर (Keylogger) हे एक दुर्भावनापूर्ण सॉफ्टवेअर (malicious software) आहे जे वापरकर्त्याच्या कीबोर्डवरील प्रत्येक keystroke रेकॉर्ड करते, विशेषतः पासवर्ड आणि क्रेडिट कार्डची माहिती चोरण्यासाठी याचा वापर होतो.</p>
+            </div>
+        </div>
 
     </div>
 
-    <!-- मजकूर बदलण्यासाठी JavaScript -->
     <script>
-        // बटन आणि मजकूर घटकांची ओळख
-        const button = document.getElementById('change-text-button');
-        const messageText = document.getElementById('message-text');
-
-        // बटन क्लिक केल्यावर मजकूर बदलण्याचे कार्य
-        button.addEventListener('click', () => {
-            messageText.textContent = "मजकूर बदलला आहे! तुम्ही आता येथे कोणताही नवीन मजकूर पाहू शकता.";
-            // बटन नंतर अक्षम करण्यासाठी
-            button.disabled = true;
-            button.textContent = "झाले";
-            button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-            button.classList.add('bg-gray-400', 'cursor-not-allowed');
-        });
+        function showAnswer(button) {
+            const card = button.closest('.card');
+            const explanation = card.querySelector('.explanation');
+            explanation.classList.toggle('hide');
+            
+            // Highlight the correct option
+            const correctAnswer = card.querySelector(`.option[data-answer]`);
+            if (correctAnswer) {
+                correctAnswer.classList.add('correct-answer');
+            }
+        }
     </script>
-
 </body>
 </html>
